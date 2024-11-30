@@ -46,8 +46,8 @@
 <body>
   <a href="/login" class="btn btn-secondary mr-5"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
   <div class="content mt-5">
-    <div class="card">
-      <div class="card-body">
+    <div class="barangd">
+      <div class="barangd-body">
         <table id="example1" class="table table-striped table-bordered table-hover text-center" style="width: 100%">
           <thead>
             <tr>
@@ -71,55 +71,55 @@
             </tr>
           </thead>
           <tbody>
-          @foreach ($car as $data)
+          @foreach ($barang as $car)
                               <td>
                                     <td>{{ $loop->index+1}}</td>
-                                    <td>{{ $data->bagian}}</td>
-                                    <td>{{ $data->nama_peminta}}</td>
-                                    @if ($data->pimpinan == 1)
+                                    <td>{{ $car->bagian}}</td>
+                                    <td>{{ $car->nama_peminta}}</td>
+                                    @if ($car->pimpinan == 1)
                                       1
-                                    @elseif ($data->pimpinan == 2)
+                                    @elseif ($car->pimpinan == 2)
                                       2
-                                    @elseif ($data->pimpinan == 3)
+                                    @elseif ($car->pimpinan == 3)
                                       3
-                                    @elseif ($data->pimpinan == 4)
+                                    @elseif ($car->pimpinan == 4)
                                       4
-                                    @elseif ($data->pimpinan == 5)
+                                    @elseif ($car->pimpinan == 5)
                                       5
                                     @endif
                                   </td>
                                   <td>
-                                    @if ($data->pelaksana == 1)
+                                    @if ($car->pelaksana == 1)
                                       1
-                                    @elseif ($data->pelaksana == 2)
+                                    @elseif ($car->pelaksana == 2)
                                       2
-                                    @elseif ($data->pelaksana == 3)
+                                    @elseif ($car->pelaksana == 3)
                                       3
-                                    @elseif ($data->pelaksana == 4)
+                                    @elseif ($car->pelaksana == 4)
                                       4
-                                    @elseif ($data->pelaksana == 5)
+                                    @elseif ($car->pelaksana == 5)
                                       5
                                     @endif
-                                    <td>{{$data->tujuan}}</td>
-                                    <td>{{$data->keperluan}}</td>
-                                    <td>{{$data->tanggal}}</td>
-                                    <td>{{$data->jam_berangkat}}</td>
-                                    <td>{{$data->jam_kembali}}</td>
-                                    <td>{{$data->jenis_kendaraan}}</td>
-                                    <td>{{$data->nopol}}</td>
-                                    <td>{{$data->pengemudi}}</td>
-                                    <td>{{$data->estimasi_bbm}}</td>
-                                    <td>{{$data->estimasi_tol}}</td>
+                                    <td>{{$car->tujuan}}</td>
+                                    <td>{{$car->keperluan}}</td>
+                                    <td>{{$car->tanggal}}</td>
+                                    <td>{{$car->jam_berangkat}}</td>
+                                    <td>{{$car->jam_kembali}}</td>
+                                    <td>{{$car->jenis_kendaraan}}</td>
+                                    <td>{{$car->nopol}}</td>
+                                    <td>{{$car->pengemudi}}</td>
+                                    <td>{{$car->estimasi_bbm}}</td>
+                                    <td>{{$car->estimasi_tol}}</td>
                                     <td>
-                                        @if ($data->status == 'waiting')
+                                        @if ($car->status == 'waiting')
                                             <span class="badge badge-warning">Menunggu</span>
-                                        @elseif ($data->status == 'approval')
+                                        @elseif ($car->status == 'approval')
                                             <span class="badge badge-primary">Diterima</span>
                                         @else
                                             <span class="badge badge-danger">Ditolak</span>
                                         @endif
                                     </td>
-                                    <td>{{$data->note}}</td>
+                                    <td>{{$car->note}}</td>
                                     </td>
             </tr>
             @endforeach

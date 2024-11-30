@@ -19,7 +19,6 @@ Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/', function () {
     return redirect()->route('welcome'); // Mengarahkan ke rute welcome
 });
-
 // Rute login
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate']);

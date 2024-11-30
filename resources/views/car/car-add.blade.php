@@ -48,7 +48,9 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
 
+                                        <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="nama_peminta">Nama Peminta</label>
                                             <input type="text" name="nama_peminta" class="form-control @error('nama_peminta') is-invalid @enderror" id="nama_peminta" placeholder="Nama peminta" value="{{old('nama_peminta')}}" required>
@@ -56,6 +58,8 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
+</div>
 
                                         <div class="form-group">
                                             <label for="pimpinan1">Pimpinan1</label>
@@ -67,7 +71,7 @@
 
                                         <div class="form-group">
                                             <label for="pimpinan2">Pimpinan2</label>
-                                            <input type="text" name="pimpinan2" class="form-control @error('pimpinan2') is-invalid @enderror" id="pimpinan2" placeholder="Pimpinan2" value="{{old('pimpinan2')}}" required>
+                                            <input type="text" name="pimpinan2" class="form-control @error('pimpinan2') is-invalid @enderror" id="pimpinan2" placeholder="Pimpinan2" value="{{old('pimpinan2')}}">
                                             @error('pimpinan2')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -75,7 +79,7 @@
 
                                         <div class="form-group">
                                             <label for="pimpinan3">Pimpinan3</label>
-                                            <input type="text" name="pimpinan3" class="form-control @error('pimpinan3') is-invalid @enderror" id="pimpinan3" placeholder="Pimpinan3" value="{{old('pimpinan3')}}" required>
+                                            <input type="text" name="pimpinan3" class="form-control @error('pimpinan3') is-invalid @enderror" id="pimpinan3" placeholder="Pimpinan3" value="{{old('pimpinan3')}}" >
                                             @error('pimpinan3')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -83,7 +87,7 @@
                                         
                                         <div class="form-group">
                                             <label for="pimpinan4">Pimpinan4</label>
-                                            <input type="text" name="pimpinan4" class="form-control @error('pimpinan4') is-invalid @enderror" id="pimpinan4" placeholder="Pimpinan4" value="{{old('pimpinan4')}}" required>
+                                            <input type="text" name="pimpinan4" class="form-control @error('pimpinan4') is-invalid @enderror" id="pimpinan4" placeholder="Pimpinan4" value="{{old('pimpinan4')}}" >
                                             @error('pimpinan4')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -91,7 +95,7 @@
 
                                         <div class="form-group">
                                             <label for="pimpinan5">Pimpinan5</label>
-                                            <input type="text" name="pimpinan5" class="form-control @error('pimpinan5') is-invalid @enderror" id="pimpinan5" placeholder="Pimpinan5" value="{{old('pimpinan5')}}" required>
+                                            <input type="text" name="pimpinan5" class="form-control @error('pimpinan5') is-invalid @enderror" id="pimpinan5" placeholder="Pimpinan5" value="{{old('pimpinan5')}}" >
                                             @error('pimpinan5')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -107,7 +111,7 @@
 
                                         <div class="form-group">
                                             <label for="pelaksana2">Pelaksana2</label>
-                                            <input type="text" name="pelaksana2" class="form-control @error('pelaksana2') is-invalid @enderror" id="pelaksana2" placeholder="Pelaksana2" value="{{old('pelaksana2')}}" required>
+                                            <input type="text" name="pelaksana2" class="form-control @error('pelaksana2') is-invalid @enderror" id="pelaksana2" placeholder="Pelaksana2" value="{{old('pelaksana2')}}">
                                             @error('pelaksana2')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -115,7 +119,7 @@
 
                                         <div class="form-group">
                                             <label for="pelaksana3">Pelaksana3</label>
-                                            <input type="text" name="pelaksana3" class="form-control @error('pelaksana3') is-invalid @enderror" id="pelaksana3" placeholder="Pelaksana3" value="{{old('pelaksana3')}}" required>
+                                            <input type="text" name="pelaksana3" class="form-control @error('pelaksana3') is-invalid @enderror" id="pelaksana3" placeholder="Pelaksana3" value="{{old('pelaksana3')}}">
                                             @error('pelaksana3')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -123,7 +127,7 @@
 
                                         <div class="form-group">
                                             <label for="pelaksana4">Pelaksana4</label>
-                                            <input type="text" name="pelaksana4" class="form-control @error('pelaksana4') is-invalid @enderror" id="pelaksana4" placeholder="Pelaksana4" value="{{old('pelaksana4')}}" required>
+                                            <input type="text" name="pelaksana4" class="form-control @error('pelaksana4') is-invalid @enderror" id="pelaksana4" placeholder="Pelaksana4" value="{{old('pelaksana4')}}">
                                             @error('pelaksana4')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -131,7 +135,7 @@
 
                                         <div class="form-group">
                                             <label for="pelaksana5">Pelaksana5</label>
-                                            <input type="text" name="pelaksana5" class="form-control @error('pelaksana5') is-invalid @enderror" id="pelaksana5" placeholder="Pelaksana5" value="{{old('pelaksana5')}}" required>
+                                            <input type="text" name="pelaksana5" class="form-control @error('pelaksana5') is-invalid @enderror" id="pelaksana5" placeholder="Pelaksana5" value="{{old('pelaksana5')}}">
                                             @error('pelaksana5')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -167,10 +171,8 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        </div>
-                                        </div>
                                         
-                                        <div class="col-lg-6">
+                                       
                                         <div class="form-group">
                                             <label for="jam_kembali">Jam Kembali</label>
                                             <input type="time" name="jam_kembali" class="form-control @error('jam_kembali') is-invalid @enderror" id="jam_kembali" placeholder="Jam Kembali" value="{{old('jam_kembali')}}" required>
@@ -211,7 +213,7 @@
                                             @enderror
                                         </div>
 
-                                        <class="form-group">
+                                        <div class="form-group">
                                             <label for="estimasi_tol">Estimasi Tol</label>
                                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol')}}" required>
                                             @error('estimasi_tol')
@@ -219,16 +221,16 @@
                                             @enderror
                                         </div>
 
-                                        <class="form-group">
+                                        <div class="form-group">
                                             <label for="manager_AKU_dan_umum">Manager AKU dan Umum</label>
-                                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Estimasi Tol" value="{{old('manager_AKU_dan_umum')}}" required>
+                                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('manager_AKU_dan_umum')}}" required>
                                             @error('manager_AKU_dan_umum')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <class="form-group">
+                                        <div class="form-group">
                                             <label for="manager_tanaman">Manager Tanaman</label>
-                                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder="Estimasi Tol" value="{{old('manager_tanaman')}}" required>
+                                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman')}}" required>
                                             @error('manager_tanaman')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror

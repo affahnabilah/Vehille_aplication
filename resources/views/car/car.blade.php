@@ -57,40 +57,41 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($car as $data)
-                  <tr>
-                                    <td>{{ $loop->index+1}}</td>
-                                    <td>{{ $data->bagian}}</td>
-                                    <td>{{ $data->nama_peminta}}</td>
-                                    <td>{{ $data->pimpinan1}}</td>
-                                    <td>{{ $data->pelaksana1}}</td>
-                                    <td>{{ $data->tanggal}}</td>
-                                    <td>{{ $data->tujuan}}</td>
-                                    <td>
-                                        @if ($data->status == 'waiting')
-                                            <span class="badge badge-warning">Menunggu</span>
-                                        @elseif ($data->status == 'approval')
-                                            <span class="badge badge-primary">Diterima</span>
-                                        @else
-                                            <span class="badge badge-danger">Ditolak</span>
-                                        @endif
-                                    </td>
-                    <td>
-                      <form class="d-inline" action="/car/{{ $data->id_car }}/edit" method="GET">
+                @foreach ($car as $data)
+<tr>
+    <td>{{ $loop->index + 1 }}</td>
+    <td>{{ $data->bagian }}</td>
+    <td>{{ $data->nama_peminta }}</td>
+    <td>{{ $data->pimpinan1 }}</td>
+    <td>{{ $data->pelaksana1 }}</td>
+    <td>{{ $data->tujuan }}</td>
+    <td>{{ $data->tanggal }}</td>
+    <td>
+        @if ($data->status == 'waiting')
+            <span class="badge badge-warning">Menunggu</span>
+        @elseif ($data->status == 'approval')
+            <span class="badge badge-primary">Diterima</span>
+        @else
+            <span class="badge badge-danger">Ditolak</span>
+        @endif
+    </td>
+    <td>
+  
+        <form class="d-inline" action="/car/{{ $data->id }}/edit" method="GET">
                         <button type="submit" class="btn btn-warning btn-sm mr-1" style="color: white;">
                           <i class="fa-solid fa-pen"></i> Edit
                         </button>
                       </form>
-                      <form class="d-inline" action="/car/{{ $data->id_car }}" method="POST">
-                        @csrf
+        <!-- Form untuk delete -->
+        <form class="d-inline" action="{{ route('car.destroy', $data->id) }}" method="POST">
+        @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger btn-sm" id="btn-delete"><i
                             class="fa-solid fa-trash-can"></i> Delete
-                        </button>
-                      </form>
-                    </td>
-                  </tr>
-                  @endforeach
+        </form>
+    </td>
+</tr>
+@endforeach
                 </tbody>
               </table>
             </div>
