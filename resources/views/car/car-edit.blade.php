@@ -36,8 +36,9 @@
                                 </a>
                             </div>
                         </div>
-                        <form class="needs-validation" novalidate action="/car/{{ $car->id_car }}" method="POST">
-                        @csrf
+                        <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -206,7 +207,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="estimasi_bbm">Estimasi BBM</label>
+                                        <label for="estimasi_bbm">Estimasi BBM</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
                                             <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi Bbm" value="{{old('estimasi_bbm', $car->estimasi_bbm)}}" required>
                                             @error('estimasi_bbm')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -214,7 +219,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="estimasi_tol">Estimasi Tol</label>
+                                        <div for="estimasi_tol">Estimasi e-Tol</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
                                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol', $car->estimasi_tol)}}" required>
                                             @error('estimasi_tol')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>

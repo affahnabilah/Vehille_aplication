@@ -99,7 +99,7 @@ class CarController extends Controller
     
     {
         $validated = $request->validate([
-            'bagian' => 'required|string|max:255|unique:cars,bagian'. $id_car . ',id_car',
+            'bagian' => 'nullable|string|max:255|unique:cars',
             'nama_peminta' => 'required|string|max:255',
             'pimpinan1' => 'required|string|max:255',
             'pimpinan2' => 'nullable|string',

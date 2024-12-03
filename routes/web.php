@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 
-// Mengarahkan ke rute welcome saat mengakses root URL
 Route::get('/', function () {
     return redirect()->route('welcome'); // Mengarahkan ke rute welcome
 });
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+
+
 // Rute login
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate']);
@@ -32,4 +33,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Rute mobil
 Route::resource('/car', CarController::class)->middleware('auth');
+Route::post('/car/update/{id}', [CarController::class, 'update']);
 Route::get('/print', [CarController::class, 'printCar'])->middleware('auth');

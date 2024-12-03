@@ -61,7 +61,14 @@
                                         </div>
 </div>
 
-                                        <div class="form-group">
+                                
+                                        <div class="text-center" style="margin-top: 20px;">
+                                            <label for="nama_pengikut" style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; color: #333;">Nama Pengikut</label>
+                                            </div>
+
+                                        <div class="row">
+                                        <div class="col-lg-6">
+                                        <div class="form-group" style="margin-top: 20px;">
                                             <label for="pimpinan1">Pimpinan1</label>
                                             <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{old('pimpinan1')}}" required>
                                             @error('pimpinan1')
@@ -100,8 +107,10 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
 
-                                        <div class="form-group">
+                                        <div class="col-lg-6">
+                                        <div class="form-group" style="margin-top: 20px;">
                                             <label for="pelaksana1">Pelaksana1</label>
                                             <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{old('pelaksana1')}}" required>
                                             @error('pelaksana1')
@@ -139,6 +148,8 @@
                                             @error('pelaksana5')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
+                                        </div>
+                                        </div>
                                         </div>
 
                                         <div class="form-group">
@@ -206,15 +217,23 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="estimasi_bbm">Estimasi BBM</label>
+                                        <label for="estimasi_bbm">Estimasi BBM</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
                                             <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi Bbm" value="{{old('estimasi_bbm')}}" required>
                                             @error('estimasi_bbm')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="estimasi_tol">Estimasi Tol</label>
+                                          <div class="form-group">
+                                          <label for="estimasi_tol">Estimasi e-Tol</label>
+                                          <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                  <span class="input-group-text">Rp</span>
+                                          </div>
                                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol')}}" required>
                                             @error('estimasi_tol')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
