@@ -30,7 +30,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-           'bagian' => 'required|string|max:255|unique:cars',
+            'bagian' => 'required|string|max:255',
             'nama_peminta' => 'required|string|max:255',
             'pimpinan1' => 'required|string|max:255',
             'pimpinan2' => 'nullable|string',
@@ -45,21 +45,23 @@ class CarController extends Controller
             'tujuan' => 'required|string|max:255',
             'keperluan' => 'required|string|max:255',
             'tanggal' => 'required|date',
-            'jam_berangkat' => 'required|date_format:H:i',
-            'jam_kembali' => 'required|date_format:H:i',
+            'jam_berangkat' => 'nullable|date_format:H:i',
+            'jam_kembali' => 'nullable|date_format:H:i',
             'jenis_kendaraan' => 'required|string|max:255',
             'nopol' => 'required|string|max:20',
             'pengemudi' => 'required|string|max:255',
             'estimasi_bbm' => 'required|numeric',
             'estimasi_tol' => 'required|numeric',
-            
+            'manager_AKU_dan_umum' => 'nullable|string',
+            'manager_tanaman' => 'nullable|string',
         ]);
-        $car = Car::create($request->all());
-
-        Alert::success('Success', 'car has been saved !');
-        return redirect('/car');
+    
+        // Simpan data
+        Car::create($validated);
+    
+        Alert::success('Success', 'Car has been saved!');
+        return redirect('/welcome');
     }
-
 
     /**
      * Display the specified resource.
