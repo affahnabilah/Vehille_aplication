@@ -55,9 +55,9 @@
                 <div class="card-header">
                     <h3 class="card-title">Data Pengajuan</h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
-                            <i class="fas fa-plus"></i> Tambah Pengajuan
-                        </button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/car/add'">
+    <i class="fas fa-plus"></i> Tambah Pengajuan
+</button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -104,7 +104,10 @@
 
     <!-- Modal for Adding New Submission -->
     <!-- Main content -->
-  <div class="content">
+    @section('buttonHeader')
+    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-create">
+        <i class="fas fa-plus"></i> Tambah Pengajuan
+    </button>
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
@@ -356,6 +359,7 @@
       </div>
     </div>
   </div>
+  @endsection
 
 
   <!-- jQuery -->
