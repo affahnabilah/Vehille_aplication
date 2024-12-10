@@ -22,7 +22,7 @@ Route::get('/car/add', [WelcomeController::class, 'create']); // Menampilkan for
 Route::post('/car', [WelcomeController::class, 'store']); // Ubah rute ini
 
 // Rute login
-Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'process']);
@@ -33,5 +33,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Rute mobil
 Route::resource('/car', CarController::class)->middleware('auth');
+Route::post('/car', [CarController::class, 'store'])->name('car.store');
 Route::post('/car/update/{id}', [CarController::class, 'update']);
 Route::get('/print', [CarController::class, 'printCar'])->middleware('auth');

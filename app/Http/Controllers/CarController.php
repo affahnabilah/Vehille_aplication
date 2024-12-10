@@ -19,6 +19,53 @@ class CarController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
+=======
+    public function create()
+    {
+        return view('car.car-add');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'bagian' => 'required|string|max:255',
+            'nama_peminta' => 'required|string|max:255',
+            'pimpinan1' => 'required|string|max:255',
+            'pimpinan2' => 'nullable|string',
+            'pimpinan3' => 'nullable|string',
+            'pimpinan4' => 'nullable|string',
+            'pimpinan5' => 'nullable|string',
+            'pelaksana1' => 'required|string|max:255',
+            'pelaksana2' => 'nullable|string',
+            'pelaksana3' => 'nullable|string',
+            'pelaksana4' => 'nullable|string',
+            'pelaksana5' => 'nullable|string',
+            'tujuan' => 'required|string|max:255',
+            'keperluan' => 'required|string|max:255',
+            'tanggal' => 'required|date',
+            'jam_berangkat' => 'nullable|date_format:H:i',
+            'jam_kembali' => 'nullable|date_format:H:i',
+            'jenis_kendaraan' => 'required|string|max:255',
+            'nopol' => 'required|string|max:20',
+            'pengemudi' => 'required|string|max:255',
+            'estimasi_bbm' => 'required|numeric',
+            'estimasi_tol' => 'required|numeric',
+            'manager_AKU_dan_umum' => 'nullable|string',
+            'manager_tanaman' => 'nullable|string',
+        ]);
+    
+        // Simpan data
+        Car::create($validated);
+    
+        Alert::success('Success', 'Car has been saved!');
+        return redirect('/welcome');
+    }
+
+>>>>>>> 39e0ae9804688250ad747f984f3bdef28b6c32f7
     /**
      * Display the specified resource.
      */

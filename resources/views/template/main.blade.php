@@ -38,7 +38,7 @@
           <a href="/" class="nav-link">Dashboard</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/" class="nav-link">Data Pengaju</a>
+          <a href="/" class="nav-link">Data Pengajuan</a>
         </li>
       </ul>
 
@@ -176,7 +176,7 @@
       <a href="/dashboard" class="brand-link">
         <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">ffahrimf</span>
+        <span class="brand-text font-weight-light">Car Monitoring</span>
       </a>
 
       <!-- Sidebar -->
@@ -221,7 +221,7 @@
               <a href="/car" class="nav-link">
                 <i class="nav-icon fa-solid fa-box"></i>
                 <p>
-                  Mobil
+                  Data Pengaju
                 </p>
               </a>
             </li>
@@ -262,13 +262,6 @@
     <footer class="main-footer">
       <!-- To the right -->
       <div class="float-right d-none d-sm-inline">
-
-      </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">Fahri Muh</a>.</strong> All rights
-      reserved.
-    </footer>
-  </div>
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
