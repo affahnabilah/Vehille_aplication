@@ -31,14 +31,13 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="text-right">
-                                <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
-                                    Back
+                            <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
+                                Back
                                 </a>
                             </div>
-                        </div>
-                        <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
+                            </div>
+                            <form class="needs-validation" novalidate action="/car" method="POST">
                             @csrf
-                            @method('PUT')
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">

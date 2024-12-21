@@ -21,7 +21,7 @@ class CarController extends Controller
 
     public function create()
     {
-        return view('car.car-add');
+      //
     }
 
     /**
@@ -66,21 +66,26 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Car $car)
+    public function show($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        return view('car.car-detail', compact('car'));
     }
 
-    public function printCar()
+    public function print($id)
     {
-        $car = Car::all();
-        $data = ['cars' => $car];
-
-        $pdf = PDF::loadView('car.car-print', $data);
-
+        // Mengambil data mobil berdasarkan ID
+        $car = Car::findOrFail($id); // Mengambil satu mobil berdasarkan ID
+    
+        // Siapkan data untuk view
+        $data = ['car' => $car]; // Mengirimkan data ke view
+    
+        // Membuat PDF dari view dengan data yang disiapkan
+        $pdf = PDF::loadView('car.car-print', $data); // Pastikan nama view sesuai
+    
+        // Mengembalikan PDF sebagai stream
         return $pdf->stream('view-car.pdf');
     }
-
     /**
      * Show the form for editing the specified resource.
      */

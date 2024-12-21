@@ -28,24 +28,12 @@
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-header">
-              <div class="text-right">
-                <div class="">
-                  <a href="/print" target="blank" class="btn btn-primary mr-1"><i class="fa-solid fa-print"></i>
-                    Print
-                    car</a>
-                  <a href="/car/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add
-                    car</a>
-                </div>
-              </div>
-            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-striped table-bordered table-hover text-center"
                 style="width: 100%">
                 <thead>
                   <tr>
-                    <th></th>
                                 <th>No</th>
                                 <th>Bagian</th>
                                 <th>Nama Peminta</th>
@@ -60,11 +48,6 @@
                 <tbody>
                 @foreach ($car as $data)
                 <tr>
-                    <td>
-                      <a href="#" data-toggle="collapse" data-target="#collapse-{{ $data->id }}">
-                        <i class="fa-solid fa-plus"></i>
-                      </a>
-                    </td>
     <td>{{ $loop->index + 1 }}</td>
     <td>{{ $data->bagian }}</td>
     <td>{{ $data->nama_peminta }}</td>
@@ -82,7 +65,13 @@
         @endif
     </td>
     <td>
-  
+
+    
+    <form class="d-inline" action="{{ route('car.detail', ['id' => $data->id]) }}" method="GET">
+  <button type="submit" class="btn btn-info btn-sm mr-1">
+    <i class="fa-solid fa-eye"></i> Detail
+  </button>
+</form>
         <form class="d-inline" action="/car/{{ $data->id }}/edit" method="GET">
                         <button type="submit" class="btn btn-warning btn-sm mr-1" style="color: white;">
                           <i class="fa-solid fa-pen"></i> Edit
@@ -98,7 +87,7 @@
         </form>
     </td>
 </tr>
-<tr id="collapse-{{ $data->id }}" class="collapse">
+<!-- <tr id="collapse-{{ $data->id }}" class="collapse">
                     <td colspan="10">
                         <div>
                             <strong>Detail:</strong>
@@ -139,7 +128,7 @@
                             <p>Status: {{ $data->status }}</p>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
 @endforeach
                 </tbody>
               </table>

@@ -33,6 +33,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Rute mobil
 Route::resource('/car', CarController::class)->middleware('auth');
-Route::post('/car', [CarController::class, 'store'])->name('car.store');
+Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail')->middleware('auth');
 Route::post('/car/update/{id}', [CarController::class, 'update']);
-Route::get('/print', [CarController::class, 'printCar'])->middleware('auth');
+Route::get('/print/{id}', [CarController::class, 'print'])->name('car.print');
+
+// Route::get('/car/detail', [CarController::class, 'showDetail'])->name('car.show')->middleware('auth');
