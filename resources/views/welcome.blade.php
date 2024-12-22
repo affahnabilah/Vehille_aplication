@@ -58,9 +58,9 @@
                 <div class="card-header">
                     <h3 class="card-title">Data Pengajuan</h3>
                     <div class="card-tools">
-                    <button type="button" class="btn btn-primary" onclick="window.location.href='/car/add'">
-    <i class="fas fa-plus"></i> Tambah Pengajuan
-</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
+                            <i class="fas fa-plus"></i> Tambah Pengajuan
+                        </button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -106,33 +106,6 @@
     </div>
 
     <!-- Modal for Adding New Submission -->
-<<<<<<< HEAD
-    <!-- Main content -->
-    @section('buttonHeader')
-    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-create">
-        <i class="fas fa-plus"></i> Tambah Pengajuan
-    </button>
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <div class="text-right">
-                <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
-                  Back
-                </a>
-              </div>
-            </div>
-            <form class="needs-validation" novalidate action="/car" method="POST">
-              @csrf
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                    <label>Bagian</label>
-                        <select name="bagian" class="form-control" required>
-=======
     <div class="modal fade" id="modal-create">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -146,7 +119,6 @@
                         <div class="form-group">
                         <label>Bagian</label>
                         <select name="bagian" class="form-control @error('bagian') is-invalid @enderror" id="bagian" required>
->>>>>>> 39e0ae9804688250ad747f984f3bdef28b6c32f7
                             <option value="" disabled selected>Pilih Bagian</option>
                             <option value="Tanaman">Tanaman</option>
                             <option value="AKU">AKU</option>
@@ -259,12 +231,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-  </div>
-  @endsection
-
-=======
->>>>>>> 39e0ae9804688250ad747f984f3bdef28b6c32f7
 
   <!-- jQuery -->
   <script src="/assets/plugins/jquery/jquery.min.js"></script>

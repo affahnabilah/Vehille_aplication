@@ -62,7 +62,13 @@
                                         </div>
 </div>
 
-                                        <div class="form-group">
+                                        <div class="text-center" style="margin-top: 20px;">
+                                            <label for="nama_pengikut" style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; color: #333;">Nama Pengikut</label>
+                                            </div>
+
+                                        <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group" style="margin-top: 20px;">
                                             <label for="pimpinan1">Pimpinan1</label>
                                             <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{old('pimpinan1', $car->pimpinan1)}}" required>
                                             @error('pimpinan1')
@@ -101,8 +107,10 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
 
-                                        <div class="form-group">
+                                        <div class="col-lg-6">
+                                        <div class="form-group" style="margin-top: 20px;">
                                             <label for="pelaksana1">Pelaksana1</label>
                                             <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{old('pelaksana1', $car->pelaksana1)}}" required>
                                             @error('pelaksana1')
@@ -141,6 +149,8 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
+</div>
 
                                         <div class="form-group">
                                             <label for="tujuan">Tujuan</label>
@@ -244,6 +254,17 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        <div class="form-group">
+    <label for="status">Status</label>
+    <select name="status" class="form-control @error('status') is-invalid @enderror" id="status" required>
+        <option value="waiting" {{ old('status', $car->status) == 'waiting' ? 'selected' : '' }}>Menunggu</option>
+        <option value="approval" {{ old('status', $car->status) == 'approval' ? 'selected' : '' }}>Diterima</option>
+        <option value="rejected" {{ old('status', $car->status) == 'rejected' ? 'selected' : '' }}>Ditolak</option>
+    </select>
+    @error('status')
+    <span class="invalid-feedback text-danger">{{ $message }}</span>
+    @enderror
+</div>
                                     </div>
                                 </div>
                             </div>

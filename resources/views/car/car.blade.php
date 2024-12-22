@@ -29,15 +29,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <div class="text-right">
-                <div class="">
-                  <a href="/print" target="blank" class="btn btn-primary mr-1"><i class="fa-solid fa-print"></i>
-                    Print
-                    car</a>
-                  <a href="/car/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add
-                    car</a>
-                </div>
-              </div>
+              
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -73,16 +65,19 @@
     <td>{{ $data->tujuan }}</td>
     <td>{{ $data->tanggal }}</td>
     <td>
-        @if ($data->status == 'waiting')
-            <span class="badge badge-warning">Menunggu</span>
-        @elseif ($data->status == 'approval')
-            <span class="badge badge-primary">Diterima</span>
-        @else
-            <span class="badge badge-danger">Ditolak</span>
-        @endif
-    </td>
+    @if ($data->status == 'waiting')
+        <span class="badge badge-warning">Menunggu</span>
+    @elseif ($data->status == 'approval')
+        <span class="badge badge-primary">Diterima</span>
+    @else
+        <span class="badge badge-danger">Ditolak</span>
+    @endif
+</td>
     <td>
-  
+    <form class="d-inline" action="{{ route('car.detail', $data->id) }}" method="GET">
+  <button type="submit" class="btn btn-info btn-sm mr-1">
+    <i class="fa-solid fa-eye"></i> Detail
+  </button>
         <form class="d-inline" action="/car/{{ $data->id }}/edit" method="GET">
                         <button type="submit" class="btn btn-warning btn-sm mr-1" style="color: white;">
                           <i class="fa-solid fa-pen"></i> Edit
@@ -98,48 +93,7 @@
         </form>
     </td>
 </tr>
-<tr id="collapse-{{ $data->id }}" class="collapse">
-                    <td colspan="10">
-                        <div>
-                            <strong>Detail:</strong>
-                             @if ($data->pimpinan2)
-                    <p>pimpinan2: {{ $data->pimpinan2 }}</p>
-                @endif
-                @if ($data->pimpinan3)
-                    <p>pimpinan3: {{ $data->pimpinan3 }}</p>
-                @endif
-                @if ($data->pimpinan4)
-                    <p>Pimpinan4: {{ $data->pimpinan4 }}</p>
-                @endif
-                @if ($data->pimpinan5)
-                    <p>pimpinan5: {{ $data->pimpinan5 }}</p>
-                @endif
-                             @if ($data->pelaksana2)
-                    <p>pelaksana2: {{ $data->pelaksana2 }}</p>
-                @endif
-                @if ($data->pelaksana3)
-                    <p>pelaksana3: {{ $data->pelaksana3 }}</p>
-                @endif
-                @if ($data->pelaksana4)
-                    <p>pelaksana4: {{ $data->pelaksana4 }}</p>
-                @endif
-                @if ($data->pelaksana5)
-                    <p>pelaksana5: {{ $data->pelaksana5 }}</p>
-                @endif
-                            <p>keperluan: {{ $data->keperluan }}</p>
-                            <p>jam berangkat: {{ $data->jam_berangkat }}</p>
-                            <p>jam kembali: {{ $data->jam_kembali }}</p>
-                            <p>jenis kendaraan: {{ $data->jenis_kendaraan }}</p>
-                            <p>nopol: {{ $data->nopol }}</p>
-                            <p>pengemudi: {{ $data->pengemudi }}</p>
-                            <p>estimasi_bbm: Rp {{ number_format($data->estimasi_bbm, 0, ',', '.') }}</p>
-                            <p>estimasi_tol: Rp {{ number_format($data->estimasi_tol, 0, ',', '.') }}</p>
-                            <p>manager_AKU_umum: {{ $data->manager_AKU_umum }}</p>
-                            <p>manager_tanaman: {{ $data->manager_tanaman }}</p>
-                            <p>Status: {{ $data->status }}</p>
-                        </div>
-                    </td>
-                </tr>
+
 @endforeach
                 </tbody>
               </table>
