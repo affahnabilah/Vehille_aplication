@@ -60,7 +60,7 @@ class CarController extends Controller
         Car::create($validated);
     
         Alert::success('Success', 'Car has been saved!');
-        return redirect('/welcome');
+        return redirect()->route('welcome');
     }
 
     /**
@@ -91,7 +91,7 @@ class CarController extends Controller
      */
     public function edit($id_car)
     {
-        $car = car::findOrFail($id_car);
+        $car = Car::findOrFail($id_car);
 
         return view('car.car-edit', [
             'car' => $car,
@@ -106,7 +106,7 @@ class CarController extends Controller
     
     {
         $validated = $request->validate([
-            'bagian' => 'nullable|string|max:255|unique:cars',
+            'bagian' => 'required|string|max:255',
             'nama_peminta' => 'required|string|max:255',
             'pimpinan1' => 'required|string|max:255',
             'pimpinan2' => 'nullable|string',
@@ -128,6 +128,8 @@ class CarController extends Controller
             'pengemudi' => 'required|string|max:255',
             'estimasi_bbm' => 'required|numeric',
             'estimasi_tol' => 'required|numeric',
+            'manager_AKU_dan_umum' => 'required|string|max:255',
+            'manager_tanaman' => 'required|string|max:255',
         ]);
 
         $car = Car::findOrFail($id_car);

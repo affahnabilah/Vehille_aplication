@@ -18,6 +18,7 @@ Route::get('/', function () {
     return redirect()->route('welcome'); // Mengarahkan ke rute welcome
 });
 Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+Route::resource('/car', CarController::class);
 
 
 // Rute login
@@ -32,9 +33,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 
 // Rute mobil
-Route::resource('/car', CarController::class)->middleware('auth');
 Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail')->middleware('auth');
 Route::post('/car/update/{id}', [CarController::class, 'update']);
 Route::get('/print/{id}', [CarController::class, 'print'])->name('car.print');
 
-// Route::get('/car/detail', [CarController::class, 'showDetail'])->name('car.show')->middleware('auth');
