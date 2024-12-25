@@ -294,32 +294,28 @@
                                             <td style="text-align: left;"><strong>Jam Berangkat:</strong></td>
                                             <td style="text-align: left;">{{ $car->jam_berangkat }}</td>
                                         </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Jam Kembali:</strong></td>
-                                            <td style="text-align: left;">{{ $car->jam_kembali }}</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                                 <table class="table table-bordered" style="max-width: 800px; margin: auto; margin-top: 20px;">
-    <tbody>
-        <tr>
-        <td style="text-align: left; width: 40%;"><strong>Jenis Kendaraan:</strong></td>
-            <td style="text-align: left;">{{ $car->jenis_kendaraan }}</td>
-            <td style="text-align: left; width: 35%;"><strong>Estimasi BBM:</strong></td>
-            <td style="text-align: left;">{{ $car->estimasi_bbm }}</td>
-        </tr>
-        <tr>
-            <td style="text-align: left; width: 40%;"><strong>No. Polisi:</strong></td>
-            <td style="text-align: left;">{{ $car->nopol }}</td>
-            <td style="text-align: left; width: 35%;"><strong>Estimasi Tol:</strong></td>
-            <td style="text-align: left;">{{ $car->estimasi_tol }}</td>
-        </tr>
-        
-        <tr> <td style="text-align: left;"><strong>Pengemudi:</strong></td>
-        <td style="text-align: left;">{{ $car->pengemudi }}</td>
-    </tr>
-    </tbody>
-</table>
+                                <tbody>
+                                <tr>
+                                <td style="text-align: left; width: 50%;"><strong>Jenis Kendaraan:</strong></td>
+                                <td style="text-align: left;">{{ $car->jenis_kendaraan }}</td>
+                                <td style="text-align: left; width: 50%;"><strong>Estimasi BBM:</strong></td>
+                                <td style="text-align: left;">{{ $car->estimasi_bbm }}</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left; width: 50%;"><strong>No. Polisi:</strong></td>
+                                <td style="text-align: left;">{{ $car->nopol }}</td>
+                                <td style="text-align: left; width: 50%;"><strong>Estimasi Tol:</strong></td>
+                                <td style="text-align: left;">{{ $car->estimasi_tol }}</td>
+                            </tr>
+                            <tr>
+                            <td style="text-align: left;"><strong>Pengemudi:</strong></td>
+                                <td style="text-align: left;">{{ $car->pengemudi }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                             
                             <table class="signature-table">
                                 <tr>

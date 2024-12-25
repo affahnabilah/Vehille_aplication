@@ -21,7 +21,7 @@ class CarController extends Controller
 
     public function create()
     {
-        return view('car.car-add');
+      //
     }
 
     /**
@@ -66,16 +66,16 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id_car)
+    public function show($id)
     {
-        $car = Car::findOrFail($id_car);
+        $car = Car::findOrFail($id);
         return view('car.car-detail', compact('car'));
     }
 
-    public function print($id_car)
+    public function print($id)
     {
         // Mengambil data mobil berdasarkan ID
-        $car = Car::findOrFail($id_car); // Mengambil satu mobil berdasarkan ID
+        $car = Car::findOrFail($id); // Mengambil satu mobil berdasarkan ID
     
         // Siapkan data untuk view
         $data = ['car' => $car]; // Mengirimkan data ke view
@@ -86,7 +86,6 @@ class CarController extends Controller
         // Mengembalikan PDF sebagai stream
         return $pdf->stream('view-car.pdf');
     }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -129,7 +128,6 @@ class CarController extends Controller
             'pengemudi' => 'required|string|max:255',
             'estimasi_bbm' => 'required|numeric',
             'estimasi_tol' => 'required|numeric',
-            'status' => 'required|string|in:waiting,approval,rejected',
         ]);
 
         $car = Car::findOrFail($id_car);
@@ -138,9 +136,6 @@ class CarController extends Controller
         Alert::info('Success', 'Mobil has been updated !');
         return redirect('/car');
     }
-     
-
-    
     
     /**
      * Remove the specified resource from storage.

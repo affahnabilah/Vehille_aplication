@@ -30,6 +30,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 // Rute dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+
 // Rute mobil
 Route::resource('/car', CarController::class)->middleware('auth');
 Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail')->middleware('auth');
