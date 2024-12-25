@@ -202,7 +202,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                
                        <table class="signature-table">
                                 <tr>
                                     <td class="signature">
@@ -214,6 +214,15 @@
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
+                                        <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
+                                            @if ($car->status == 'waiting')
+                                                <span class="status-waiting">Menunggu</span>
+                                            @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
+                                                <span class="status-approval">Diterima</span>
+                                            @else
+                                                <span class="status-rejected">Ditolak</span>
+                                            @endif
+                                          </div>
                                         <div class="signature-line"></div>
                                         <p>{{ $car->manager_AKU_dan_umum }}</p>
                                     </td>
@@ -294,29 +303,39 @@
                                             <td style="text-align: left;"><strong>Jam Berangkat:</strong></td>
                                             <td style="text-align: left;">{{ $car->jam_berangkat }}</td>
                                         </tr>
+                                        <tr>
+                                            <td style="text-align: left;"><strong>Jam Kembali:</strong></td>
+                                            <td style="text-align: left;">{{ $car->jam_kembali }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <table class="table table-bordered" style="max-width: 800px; margin: auto; margin-top: 20px;">
                                 <tbody>
                                 <tr>
-                                <td style="text-align: left; width: 50%;"><strong>Jenis Kendaraan:</strong></td>
-                                <td style="text-align: left;">{{ $car->jenis_kendaraan }}</td>
-                                <td style="text-align: left; width: 50%;"><strong>Estimasi BBM:</strong></td>
-                                <td style="text-align: left;">{{ $car->estimasi_bbm }}</td>
+                                <td style="text-align: left; "><strong>Jenis Kendaraan:</strong></td>
+                                <td style="text-align: left;">{{ $car->jenis_kendaraan }}</td></tr>
+                                
+                           
+                                <tr>
+                                <td style="text-align: left; "><strong>No. Polisi:</strong></td>
+                                <td style="text-align: left;">{{ $car->nopol }}</td></tr>
+                                <tr>
+                                <td style="text-align: left; "><strong>Estimasi BBM:</strong></td>
+                                <td style="text-align: left;">Rp {{ number_format($car->estimasi_bbm, 0, ',', '.') }}</td>
                             </tr>
-                            <tr>
-                                <td style="text-align: left; width: 50%;"><strong>No. Polisi:</strong></td>
-                                <td style="text-align: left;">{{ $car->nopol }}</td>
-                                <td style="text-align: left; width: 50%;"><strong>Estimasi Tol:</strong></td>
-                                <td style="text-align: left;">{{ $car->estimasi_tol }}</td>
+                                <tr>
+                                <td style="text-align: left; "><strong>Estimasi Tol:</strong></td>
+                                <td style="text-align: left;">Rp {{ number_format($car->estimasi_tol, 0, ',', '.') }}</td> 
                             </tr>
+
                             <tr>
-                            <td style="text-align: left;"><strong>Pengemudi:</strong></td>
+                            <td style="text-align: left; "><strong>Pengemudi:</strong></td>
                                 <td style="text-align: left;">{{ $car->pengemudi }}</td>
                             </tr>
+
                         </tbody>
                     </table>
-                            
+    
                             <table class="signature-table">
                                 <tr>
                                     <td class="signature">

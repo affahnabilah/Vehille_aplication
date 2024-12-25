@@ -29,38 +29,39 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'bagian' => 'required|string|max:255',
-            'nama_peminta' => 'required|string|max:255',
-            'pimpinan1' => 'required|string|max:255',
-            'pimpinan2' => 'nullable|string',
-            'pimpinan3' => 'nullable|string',
-            'pimpinan4' => 'nullable|string',
-            'pimpinan5' => 'nullable|string',
-            'pelaksana1' => 'required|string|max:255',
-            'pelaksana2' => 'nullable|string',
-            'pelaksana3' => 'nullable|string',
-            'pelaksana4' => 'nullable|string',
-            'pelaksana5' => 'nullable|string',
-            'tujuan' => 'required|string|max:255',
-            'keperluan' => 'required|string|max:255',
-            'tanggal' => 'required|date',
-            'jam_berangkat' => 'nullable|date_format:H:i',
-            'jam_kembali' => 'nullable|date_format:H:i',
-            'jenis_kendaraan' => 'required|string|max:255',
-            'nopol' => 'required|string|max:20',
-            'pengemudi' => 'required|string|max:255',
-            'estimasi_bbm' => 'required|numeric',
-            'estimasi_tol' => 'required|numeric',
-            'manager_AKU_dan_umum' => 'nullable|string',
-            'manager_tanaman' => 'nullable|string',
-        ]);
-    
+       // $validated = $request->validate([
+         //   'bagian' => 'required|string|max:255',
+        //    'nama_peminta' => 'required|string|max:255',
+            // 'pimpinan1' => 'required|string|max:255',
+         //    'pimpinan2' => 'nullable|string',
+         //    'pimpinan3' => 'nullable|string',
+          //   'pimpinan4' => 'nullable|string',
+           //  'pimpinan5' => 'nullable|string',
+           //  'pelaksana1' => 'required|string|max:255',
+           //  'pelaksana2' => 'nullable|string',
+            // 'pelaksana3' => 'nullable|string',
+            // 'pelaksana4' => 'nullable|string',
+            // 'pelaksana5' => 'nullable|string',
+            // 'tujuan' => 'required|string|max:255',
+            // 'keperluan' => 'required|string|max:255',
+            // 'date' => 'nullable|date',
+            // 'jam_berangkat' => 'nullable|date_format:H:i',
+             //'jam_kembali' => 'nullable|date_format:H:i',
+           //  'jenis_kendaraan' => 'required|string|max:255',
+            // 'nopol' => 'required|string|max:20',
+            // 'pengemudi' => 'required|string|max:255',
+            // 'estimasi_bbm' => 'required|numeric',
+            // 'estimasi_tol' => 'required|numeric',
+            // 'manager_AKU_dan_umum' => 'required|string|max:255',
+            // 'manager_tanaman' => 'required|string|max:255',
+            // 'status' => 'required|in:waiting,approval,rejected',
+       //  ]);
+        
         // Simpan data
-        Car::create($validated);
+        Car::create($request->all());
     
         Alert::success('Success', 'Car has been saved!');
-        return redirect('/welcome');
+        return redirect()->route('welcome');
     }
 
     /**
@@ -91,7 +92,7 @@ class CarController extends Controller
      */
     public function edit($id_car)
     {
-        $car = car::findOrFail($id_car);
+        $car = Car::findOrFail($id_car);
 
         return view('car.car-edit', [
             'car' => $car,
@@ -106,7 +107,7 @@ class CarController extends Controller
     
     {
         $validated = $request->validate([
-            'bagian' => 'nullable|string|max:255|unique:cars',
+            'bagian' => 'required|string|max:255',
             'nama_peminta' => 'required|string|max:255',
             'pimpinan1' => 'required|string|max:255',
             'pimpinan2' => 'nullable|string',
@@ -128,6 +129,9 @@ class CarController extends Controller
             'pengemudi' => 'required|string|max:255',
             'estimasi_bbm' => 'required|numeric',
             'estimasi_tol' => 'required|numeric',
+            'manager_AKU_dan_umum' => 'required|string|max:255',
+            'manager_tanaman' => 'required|string|max:255',
+            'status' => 'required|in:waiting,approval,rejected',
         ]);
 
         $car = Car::findOrFail($id_car);

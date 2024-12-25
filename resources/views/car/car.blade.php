@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Car')
+@section('title', 'Digital submission')
 @section('content')
 
 <div class="content-wrapper">
@@ -8,12 +8,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">@yield('title')</h1>
+          <h1 class="m-20" style="font-family: 'Century schoolbook', sans-serif;">@yield('title')</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active">@yield('title')</li>
+            <li class="breadcrumb-item active" >@yield('title')</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -30,7 +30,8 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-striped table-bordered table-hover text-center"
+              <div class="table-responsive"> <!-- Tambahkan div ini -->
+                <table id="example1" class="table table-striped table-bordered table-hover text-center"
                 style="width: 100%">
                 <thead>
                   <tr>
@@ -87,48 +88,6 @@
         </form>
     </td>
 </tr>
-<!-- <tr id="collapse-{{ $data->id }}" class="collapse">
-                    <td colspan="10">
-                        <div>
-                            <strong>Detail:</strong>
-                             @if ($data->pimpinan2)
-                    <p>pimpinan2: {{ $data->pimpinan2 }}</p>
-                @endif
-                @if ($data->pimpinan3)
-                    <p>pimpinan3: {{ $data->pimpinan3 }}</p>
-                @endif
-                @if ($data->pimpinan4)
-                    <p>Pimpinan4: {{ $data->pimpinan4 }}</p>
-                @endif
-                @if ($data->pimpinan5)
-                    <p>pimpinan5: {{ $data->pimpinan5 }}</p>
-                @endif
-                             @if ($data->pelaksana2)
-                    <p>pelaksana2: {{ $data->pelaksana2 }}</p>
-                @endif
-                @if ($data->pelaksana3)
-                    <p>pelaksana3: {{ $data->pelaksana3 }}</p>
-                @endif
-                @if ($data->pelaksana4)
-                    <p>pelaksana4: {{ $data->pelaksana4 }}</p>
-                @endif
-                @if ($data->pelaksana5)
-                    <p>pelaksana5: {{ $data->pelaksana5 }}</p>
-                @endif
-                            <p>keperluan: {{ $data->keperluan }}</p>
-                            <p>jam berangkat: {{ $data->jam_berangkat }}</p>
-                            <p>jam kembali: {{ $data->jam_kembali }}</p>
-                            <p>jenis kendaraan: {{ $data->jenis_kendaraan }}</p>
-                            <p>nopol: {{ $data->nopol }}</p>
-                            <p>pengemudi: {{ $data->pengemudi }}</p>
-                            <p>estimasi_bbm: Rp {{ number_format($data->estimasi_bbm, 0, ',', '.') }}</p>
-                            <p>estimasi_tol: Rp {{ number_format($data->estimasi_tol, 0, ',', '.') }}</p>
-                            <p>manager_AKU_umum: {{ $data->manager_AKU_umum }}</p>
-                            <p>manager_tanaman: {{ $data->manager_tanaman }}</p>
-                            <p>Status: {{ $data->status }}</p>
-                        </div>
-                    </td>
-                </tr> -->
 @endforeach
                 </tbody>
               </table>
@@ -142,5 +101,6 @@
     </div>
   </div>
 </div>
+
 
 @endsection

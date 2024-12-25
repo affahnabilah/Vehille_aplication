@@ -31,19 +31,28 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="text-right">
-                            <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
-                                Back
+                                <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
+                                    Back
                                 </a>
                             </div>
-                            </div>
-                            <form class="needs-validation" novalidate action="/car" method="POST">
+                        </div>
+                         <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
                             @csrf
+                            @method('PUT') <!-- Menambahkan method PUT untuk update -->
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                        <label for="bagian">Bagian</label>
-                                            <input type="text" name="bagian" class="form-control @error('bagian') is-invalid @enderror" id="bagian" placeholder="Bagian" value="{{old('bagian', $car->bagian)}}" required>
+                                            <label for="bagian">Bagian</label>
+                                            <select name="bagian" class="form-control @error('bagian') is-invalid @enderror" id="bagian" required>
+                                                <option value="" disabled>Pilih Bagian</option>
+                                                <option value="Tanaman" {{ old('bagian', $car->bagian) == 'Tanaman' ? 'selected' : '' }}>Tanaman</option>
+                                                <option value="AKU" {{ old('bagian', $car->bagian) == 'AKU' ? 'selected' : '' }}>AKU</option>
+                                                <option value="Teknik" {{ old('bagian', $car->bagian) == 'Teknik' ? 'selected' : '' }}>Teknik</option>
+                                                <option value="QE" {{ old('bagian', $car->bagian) == 'QE' ? 'selected' : '' }}>QE</option>
+                                                <option value="AK" {{ old('bagian', $car->bagian) == 'AK' ? 'selected' : '' }}>AK</option>
+                                                <!-- Tambahkan opsi lain sesuai kebutuhan -->
+                                            </select>
                                             @error('bagian')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -60,14 +69,14 @@
                                         </div>
                                         </div>
 </div>
-
-                                        <div class="text-center" style="margin-top: 20px;">
-                                            <label for="nama_pengikut" style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; color: #333;">Nama Pengikut</label>
-                                            </div>
-
-                                        <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="form-group" style="margin-top: 20px;">
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h5 style="font-family: 'Rockwell', sans-serif; margin: 20px 0;">Nama Pengikut</h5>
+    </div>
+</div>
+                                    <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
                                             <label for="pimpinan1">Pimpinan1</label>
                                             <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{old('pimpinan1', $car->pimpinan1)}}" required>
                                             @error('pimpinan1')
@@ -108,8 +117,9 @@
                                         </div>
                                         </div>
 
+                                        
                                         <div class="col-lg-6">
-                                        <div class="form-group" style="margin-top: 20px;">
+                                        <div class=" form-group">
                                             <label for="pelaksana1">Pelaksana1</label>
                                             <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{old('pelaksana1', $car->pelaksana1)}}" required>
                                             @error('pelaksana1')
@@ -149,7 +159,7 @@
                                             @enderror
                                         </div>
                                         </div>
-</div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label for="tujuan">Tujuan</label>
@@ -216,11 +226,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <label for="estimasi_bbm">Estimasi BBM</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Rp</span>
-                                            </div>
+                                            <label for="estimasi_bbm">Estimasi BBM</label>
+                                            <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rp</span>
+                                        </div>
                                             <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi Bbm" value="{{old('estimasi_bbm', $car->estimasi_bbm)}}" required>
                                             @error('estimasi_bbm')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -228,11 +238,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <div for="estimasi_tol">Estimasi e-Tol</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Rp</span>
-                                            </div>
+                                            <label for="estimasi_tol">Estimasi Tol</label>
+                                            <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rp</span>
+                                        </div>
                                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol', $car->estimasi_tol)}}" required>
                                             @error('estimasi_tol')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>

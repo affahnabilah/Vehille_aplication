@@ -18,6 +18,8 @@ Route::get('/', function () {
     return redirect()->route('welcome'); // Mengarahkan ke rute welcome
 });
 Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+Route::post('/car/store', [CarController::class, 'store'])->name('car.store');
+
 
 
 // Rute login
@@ -32,9 +34,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 
 // Rute mobil
-Route::resource('/car', CarController::class)->middleware('auth');
-Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail')->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::resource('/car', CarController::class)->except(['store']);
+    Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail');
 Route::post('/car/update/{id}', [CarController::class, 'update']);
 Route::get('/print/{id}', [CarController::class, 'print'])->name('car.print');
+    Route::delete('/car/{id}', [CarController::class, 'destroy'])->name('car.destroy');
+});
 
-// Route::get('/car/detail', [CarController::class, 'showDetail'])->name('car.show')->middleware('auth');
+// Route for the welcome page to show the form

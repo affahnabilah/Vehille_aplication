@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Barang</title>
+  <title>Pengajuan Sistem</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Ionicons -->
@@ -43,28 +43,36 @@
     margin-bottom: 20px;
     display: flex;
   }
+  .card-title {
+        font-family: 'Bookman old Style', sans-serif; /* Ganti dengan font yang Anda inginkan */
+        font-size: 1.0rem; /* Atur ukuran font sesuai kebutuhan */
+        margin-top: 10px; /* Atur jarak atas untuk mengatur posisi ke bawah */
+        
+    }
   </style>
 </head>
 
 <body>
-  <a href="/login" class="btn btn-secondary mr-5"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-  <div class="content mt-5">
+<div class="container"> 
+    
+    <div class="content mt-5"> 
     <div class="barangd">
       <div class="barangd-body">
-        <table id="example1" class="table table-striped table-bordered table-hover text-center" style="width: 100%">
-        <div class="row">
+        <iv class="row">
+            
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Pengajuan</h3>
+                    <h1 class="card-title">Digital Submission</h1>
                     <div class="card-tools">
+                        
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
                             <i class="fas fa-plus"></i> Tambah Pengajuan
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
-                         <table id="dataTable" class="table table-bordered table-hover table-red"> <!-- Gunakan kelas kustom -->
+                <div class="table-responsive">
+                <table id="dataTable" class="table table-bordered table-hover text-center"><!-- Gunakan kelas kustom -->
                     <thead>
                         <tr>
                                 <th>No</th>
@@ -99,11 +107,12 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>
+                </table>
+
                 </div>
             </div>
         </div>
-    </div>
+    
 
     <!-- Modal for Adding New Submission -->
     <div class="modal fade" id="modal-create">
@@ -113,8 +122,8 @@
                     <h4 class="modal-title">Tambah Pengajuan</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form class="needs-validation" novalidate action="/car" method="POST">
-                     @csrf
+                <form class="needs-validation" novalidate action="{{ route('car.store') }}" method="POST">
+                @csrf
                     <div class="modal-body">
                         <div class="form-group">
                         <label>Bagian</label>
@@ -178,7 +187,7 @@
                         </div>
                         <div class="form-group">
                             <label>Keperluan</label>
-                            <input type="text" name="keperluan" class="form-control @error('keperluan') is-invalid @enderror" id="bagian" placeholder="Keperluan" value="{{old('keperluan')}}" required>
+                            <input type="text" name="keperluan" class="form-control @error('keperluan') is-invalid @enderror" id="keperluan" placeholder="Keperluan" value="{{old('keperluan')}}" required>
                         </div>
                         <div class="form-group">
                             <label>Tanggal</label>
@@ -204,12 +213,19 @@
                             <label>Pengemudi</label>
                             <input type="text" name="pengemudi" class="form-control @error('pengemudi') is-invalid @enderror" id="pengemudi" placeholder="Pengemudi" value="{{old('pengemudi')}}" required>
                         </div>
-                        <div class="form-group">
-                            <label>Estimasi BBM</label>
+                        <label>Estimasi BBM</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rp</span>
+                            </div>
                             <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi Bbm" value="{{old('estimasi_bbm')}}" required>
                         </div>
                         <div class="form-group">
-                            <label>Estimasi Tol</label>
+                        <label>Estimasi Tol</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rp</span>
+                            </div>
                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol')}}" required>
                         </div>
                         <div class="form-group">
@@ -222,13 +238,16 @@
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                <button class="btn btn-dark mr-1" type="reset"><i class="fa-solid fa-arrows-rotate"></i>
-                  Batal</button>
+    <button class="btn btn-dark mr-1" type="button" data-dismiss="modal"><i class="fa-solid fa-arrows-rotate"></i>
+        Batal</button>
                 <button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i>
                   Save</button>
               </div>
                 </form>
             </div>
+        </div>
+    </div>
+    </div>
         </div>
     </div>
 
