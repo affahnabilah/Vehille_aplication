@@ -129,6 +129,7 @@ class CarController extends Controller
             'pengemudi' => 'required|string|max:255',
             'estimasi_bbm' => 'required|numeric',
             'estimasi_tol' => 'required|numeric',
+            'status' => 'required|in:waiting,approval,rejected',
         ]);
 
         $car = Car::findOrFail($id_car);

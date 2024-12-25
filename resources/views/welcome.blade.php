@@ -236,6 +236,7 @@
                             <label>Manager Tanaman</label>
                             <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman')}}" required>
                         </div>
+                        
                     </div>
                     <div class="card-footer text-right">
     <button class="btn btn-dark mr-1" type="button" data-dismiss="modal"><i class="fa-solid fa-arrows-rotate"></i>

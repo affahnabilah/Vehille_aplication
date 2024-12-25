@@ -18,7 +18,6 @@ Route::get('/', function () {
     return redirect()->route('welcome'); // Mengarahkan ke rute welcome
 });
 Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
-
 Route::post('/car/store', [CarController::class, 'store'])->name('car.store');
 
 
@@ -37,8 +36,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::middleware('auth')->group(function () {
     Route::resource('/car', CarController::class)->except(['store']);
     Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail');
-Route::get('/car/{id}', [CarController::class, 'show'])->name('car.detail')->middleware('auth');
-Route::post('/car/update/{id}', [CarController::class, 'update']);
-Route::get('/print/{id}', [CarController::class, 'print'])->name('car.print');
-    Route::delete('/car/{id}', [CarController::class, 'destroy'])->name('car.destroy');
+    Route::post('/car/update/{id}', [CarController::class, 'update']);
+    Route::get('/print/{id}', [CarController::class, 'print'])->name('car.print');
+ Route::delete('/car/{id}', [CarController::class, 'destroy'])->name('car.destroy');
 });

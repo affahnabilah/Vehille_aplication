@@ -35,9 +35,9 @@
                                 </a>
                             </div>
                             </div>
-                            <form class="needs-validation" novalidate action="/car" method="POST">
+                            <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
                             @csrf
-                            @method('PUT') <!-- Menambahkan method PUT untuk update -->
+                            @method('PUT')<!-- Menambahkan method PUT untuk update -->
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -68,7 +68,14 @@
                                         </div>
                                         </div>
 </div>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h5>Melaksanakan</h5>
+    </div>
+</div>
 
+<div class="row">
+                                    <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="pimpinan1">Pimpinan1</label>
                                             <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{old('pimpinan1', $car->pimpinan1)}}" required>
@@ -109,7 +116,9 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        </div>
 
+                                        <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="pelaksana1">Pelaksana1</label>
                                             <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{old('pelaksana1', $car->pelaksana1)}}" required>
@@ -149,7 +158,8 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-
+                                        </div>
+                                        </div>
                                 <div class="form-group">
                                     <label for="tujuan">Tujuan</label>
                                     <input type="text" name="tujuan" class="form-control @error('tujuan') is-invalid @enderror" id="tujuan" placeholder="Tujuan" value="{{ old('tujuan', $car->tujuan) }}" required>
@@ -252,6 +262,17 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        <div class="form-group">
+    <label for="status">Status</label>
+    <select name="status" class="form-control @error('status') is-invalid @enderror" id="status" required>
+        <option value="waiting" {{ old('status', $car->status) == 'waiting' ? 'selected' : '' }}>Menunggu</option>
+        <option value="approval" {{ old('status', $car->status) == 'approval' ? 'selected' : '' }}>Diterima</option>
+        <option value="rejected" {{ old('status', $car->status) == 'rejected' ? 'selected' : '' }}>Ditolak</option>
+    </select>
+    @error('status')
+    <span class="invalid-feedback text-danger">{{ $message }}</span>
+    @enderror
+</div>
                                     </div>
                                 </div>
                             </div>
