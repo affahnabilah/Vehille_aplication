@@ -130,16 +130,16 @@
                         <select name="bagian" class="form-control @error('bagian') is-invalid @enderror" id="bagian" required>
                             <option value="" disabled selected>Pilih Bagian</option>
                             <option value="Tanaman">Tanaman</option>
-                            <option value="AKU">AKU</option>
+                            <option value="Pengolahan">Pengolahan</option>
                             <option value="Teknik">Teknik</option>
-                            <option value="QE">QE</option>
+                            <option value="QA">QA</option>
                             <option value="AK">AK</option>
                             <!-- Tambahkan opsi lain sesuai kebutuhan -->
                         </select>
                     </div>
                         <div class="form-group">
                             <label>Nama Peminta</label>
-                            <input type="text" name="nama_peminta" class="form-control @error('nama_peminta') is-invalid @enderror" id="nama_peminta" placeholder="Nama peminta" value="{{old('nama_peminta')}}" required>
+                            <input type="text" name="nama_peminta" class="form-control @error('nama_peminta') is-invalid @enderror" id="nama_peminta" placeholder="Nama peminta" value="{{old('nama_peminta' ,'Raharno Arif Gunadi')}}" required>
                         </div>
                         <div class="form-group">
                             <label>Pimpinan 1</label>
@@ -228,7 +228,16 @@
                             </div>
                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol')}}" required>
                         </div>
-                       
+                        <div class="form-group">
+                            <label>Manager AKU dan Umum</label>
+                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('manager_AKU_dan_umum','Nanang Praono R')}}" required>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Manager Tanaman</label>
+                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman','Arif Agung P')}}" required>
+                            
+                        </div>
                         
                     </div>
                     <div class="card-footer text-right">
