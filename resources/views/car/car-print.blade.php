@@ -154,7 +154,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Nama Peminta:</strong></td>
-                                <td>{{ $car->nama_peminta }}</td>
+                                <td>Raharno Arif Gunadi</td>
                             </tr>
                             <tr>
                                 <td><strong>Nama Pengikut:</strong></td>
@@ -230,7 +230,7 @@
                                         <p><strong>Peminta</strong></p>
                                         <p><strong>-</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p>Raharno Arif Gunadi</p>
                                     </td>
                                 </tr>
                             </table>
@@ -363,7 +363,7 @@
                                         <p><strong>Peminta</strong></p>
                                         <p><strong>-</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p>Raharno Arif Gunadi</p>
                                     </td>
                                 </tr>
                             </table>

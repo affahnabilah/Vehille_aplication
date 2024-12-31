@@ -35,7 +35,7 @@
 
                                 <p><strong>No. Urut:</strong> {{ $car->id }}</p>
                                 <p><strong>Bagian:</strong> {{ $car->bagian }}</p>
-                                <p><strong>Nama Peminta:</strong> {{ $car->nama_peminta }}</p>
+                                <p><strong>Nama Peminta:</strong> Raharno Arif Gunadi </p>
                             </div>
                         </div>
                         <div class="row">
@@ -88,7 +88,7 @@
                                     <p><strong>Peminta</strong></p>
                                     <p><strong>-</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->nama_peminta }}</p>
+                                    <p> Raharno Arif Gunadi </p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                 </tr>
                 <tr>
                     <td style="text-align: left;"><strong>Nama Peminta:</strong></td>
-                    <td style="text-align: left;">{{ $car->nama_peminta }}</td>
+                    <td style="text-align: left;"> Raharno Arif Gunadi</td>
                 </tr>
                 <tr>
                     <td style="text-align: left;"><strong>Nama Pengikut:</strong></td>
@@ -224,7 +224,7 @@
                     <p><strong>Peminta</strong></p>
                     <p><strong>-</strong></p>
                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->nama_peminta }}</p>
+                    <p>Raharno Arif Gunadi</p>
                 </div>
             </div>
         </div>
