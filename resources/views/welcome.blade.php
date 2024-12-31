@@ -228,14 +228,7 @@
                             </div>
                             <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol')}}" required>
                         </div>
-                        <div class="form-group">
-                            <label>Manager AKU dan Umum</label>
-                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('manager_AKU_dan_umum')}}" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Manager Tanaman</label>
-                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman')}}" required>
-                        </div>
+                       
                         
                     </div>
                     <div class="card-footer text-right">

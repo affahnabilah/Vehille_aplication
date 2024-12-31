@@ -154,7 +154,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Nama Peminta:</strong></td>
-                                <td>{{ $car->nama_peminta }}</td>
+                                <td>Raharno Arif Gunadi</td>
                             </tr>
                             <tr>
                                 <td><strong>Nama Pengikut:</strong></td>
@@ -209,7 +209,7 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p><strong>Arif Agung Gagah P</strong></p>
+                                        <p>{{ $car->manager_tanaman }}</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
@@ -229,7 +229,13 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p><strong>Raharno Arif Gunadi</strong></p>
+                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                    </td>
+                                    <td class="signature">
+                                        <p><strong>Peminta</strong></p>
+                                        <p><strong>-</strong></p>
+                                        <div class="signature-line"></div>
+                                        <p>{{ $car->nama_peminta }}</p>
                                     </td>
                                 </tr>
                             </table>
@@ -341,7 +347,7 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p><strong>Arif Agung Gagah P</strong></p>
+                                        <p>{{ $car->manager_tanaman }}</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
@@ -361,7 +367,13 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p><strong>Raharno Arif Gunadi</strong></p>
+                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                    </td>
+                                    <td class="signature">
+                                        <p><strong>Peminta</strong></p>
+                                        <p><strong>-</strong></p>
+                                        <div class="signature-line"></div>
+                                        <p>{{ $car->nama_peminta }}</p>
                                     </td>
                                 </tr>
                             </table>
