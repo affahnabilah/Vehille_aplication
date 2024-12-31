@@ -203,34 +203,33 @@
                         </tbody>
                     </table>
                 
-                       <table class="signature-table">
+                    <table class="signature-table">
                                 <tr>
                                     <td class="signature">
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p><strong>Arif Agung Gagah P</strong></p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
+                                        <div class="signature-line"></div>
+                                        <p><strong>Nanang Praono R.</strong></p>
+                                    </td>
+                                    <td class="signature">
+                                        <p><strong>Peminta</strong></p>
                                         <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
                                             @if ($car->status == 'waiting')
                                                 <span class="status-waiting">Menunggu</span>
                                             @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
-                                                <span class="status-approval">Diterima</span>
+                                                <span class="status-approval">Disetujui</span>
                                             @else
                                                 <span class="status-rejected">Ditolak</span>
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
-                                    </td>
-                                    <td class="signature">
-                                        <p><strong>Peminta</strong></p>
-                                        <p><strong>-</strong></p>
-                                        <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p><strong>Raharno Arif Gunadi</strong></p>
                                     </td>
                                 </tr>
                             </table>
@@ -342,28 +341,27 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p><strong>Arif Agung Gagah P</strong></p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
+                                        <div class="signature-line"></div>
+                                        <p><strong>Nanang Praono R.</strong></p>
+                                    </td>
+                                    <td class="signature">
+                                        <p><strong>Peminta</strong></p>
                                         <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
                                             @if ($car->status == 'waiting')
                                                 <span class="status-waiting">Menunggu</span>
                                             @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
-                                                <span class="status-approval">Diterima</span>
+                                                <span class="status-approval">Disetujui</span>
                                             @else
                                                 <span class="status-rejected">Ditolak</span>
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
-                                    </td>
-                                    <td class="signature">
-                                        <p><strong>Peminta</strong></p>
-                                        <p><strong>-</strong></p>
-                                        <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p><strong>Raharno Arif Gunadi</strong></p>
                                     </td>
                                 </tr>
                             </table>

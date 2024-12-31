@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Detail Car')
+@section('title', 'Detail Monitoring')
 @section('content')
 
 <div class="content-wrapper">
@@ -7,14 +7,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('title')</h1>
+                <h1 class="m-20" stayle="font-family: 'Overlock', sans-serif;">@yield('title')</h1>
                 </div>
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/car">Mobil</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -22,7 +17,7 @@
 
     <div class="text-right mb-3">
     <a href="{{ route('car.print', $car->id) }}" target="_blank" class="btn btn-primary">
-        <i class="fa-solid fa-print"></i> Print Car
+        <i class="fa-solid fa-print"></i> Print Here
     </a>
 </div>
 
@@ -81,19 +76,27 @@
                                     <p><strong>Disetujui</strong></p>
                                     <p><strong>Manager Tanaman</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->manager_tanaman }}</p>
+                                    <p><strong>Arif Agung Gagah P</strong></p>
                                 </div>
                                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                                     <p><strong>Mengetahui</strong></p>
                                     <p><strong>Manager AKU & Umum</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                    <p><strong>Nanang Praono R.</strong></p>
                                 </div>
                                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                                     <p><strong>Peminta</strong></p>
-                                    <p><strong>-</strong></p>
+                                    <p style="margin-top: 10px;">
+                                    @if ($car->status == 'waiting')
+                                        <span class="status-waiting">Menunggu</span>
+                                    @elseif ($car->status == 'approval')
+                                        <span class="status-approval">Diterima</span>
+                                    @else
+                                        <span class="status-rejected">Ditolak</span>
+                                    @endif
+                                </p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->nama_peminta }}</p>
+                                    <p><strong>Raharno Arif Gunadi</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -211,26 +214,34 @@
             </tbody>
         </table>
 
-        <div class="signature-section" style="margin-top: 50px;">
-            <div class="row justify-content-end">
-                <div class="col-md-4 text-center d-flex flex-column align-items-center">
-                    <p><strong>Disetujui</strong></p>
-                    <p><strong>Manager Tanaman</strong></p>
-                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->manager_tanaman }}</p>
-                </div>
-                <div class="col-md-4 text-center d-flex flex-column align-items-center">
-                    <p><strong>Mengetahui</strong></p>
-                    <p><strong>Manager AKU & Umum</strong></p>
-                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->manager_AKU_dan_umum }}</p>
-                </div>
-                <div class="col-md-4 text-center d-flex flex-column align-items-center">
-                    <p><strong>Peminta</strong></p>
-                    <p><strong>-</strong></p>
-                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->nama_peminta }}</p>
-                </div>
+        <div class="signature-section" style="margin-top: 30px;">
+                            <div class="row justify-content-end">
+                                <div class="col-md-4 text-center d-flex flex-column align-items-center">
+                                    <p><strong>Disetujui</strong></p>
+                                    <p><strong>Manager Tanaman</strong></p>
+                                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
+                                    <p><strong>Arif Agung Gagah P</strong></p>
+                                </div>
+                                <div class="col-md-4 text-center d-flex flex-column align-items-center">
+                                    <p><strong>Mengetahui</strong></p>
+                                    <p><strong>Manager AKU & Umum</strong></p>
+                                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
+                                    <p><strong>Nanang Praono R.</strong></p>
+                                </div>
+                                <div class="col-md-4 text-center d-flex flex-column align-items-center">
+                                    <p><strong>Peminta</strong></p>
+                                    <p style="margin-top: 10px;">
+                                    @if ($car->status == 'waiting')
+                                        <span class="status-waiting">Menunggu</span>
+                                    @elseif ($car->status == 'approval')
+                                        <span class="status-approval">Diterima</span>
+                                    @else
+                                        <span class="status-rejected">Ditolak</span>
+                                    @endif
+                                </p>
+                                    <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
+                                    <p><strong>Raharno Arif Gunadi</strong></p>
+                                </div>
             </div>
         </div>
     </div>
