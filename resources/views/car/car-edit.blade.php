@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Edit Car')
+@section('title', 'Edit Page')
 @section('content')
 
 <div class="content-wrapper">
@@ -8,14 +8,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('title')</h1>
+                <h1 class="m-20" style="font-family: 'Overlock', sans-serif;">@yield('title')</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/car">Car</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
-                    </ol>
+                    
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -70,7 +66,7 @@
 </div>
 <div class="row">
     <div class="col-lg-12 text-center">
-        <h5>Melaksanakan</h5>
+        <h5 style="margin-top: 20px; font-family: 'Arial', sans-serif;">Pemakai Kendaraan</h5>
     </div>
 </div>
 
@@ -85,7 +81,6 @@
                                         </div>
 
                                 <div class="form-group">
-                                    <label for="pimpinan2">Pimpinan2</label>
                                     <label for="pimpinan2">Pimpinan2</label>
                                     <input type="text" name="pimpinan2" class="form-control @error('pimpinan2') is-invalid @enderror" id="pimpinan2" placeholder="Pimpinan2" value="{{ old('pimpinan2', $car->pimpinan2) }}">
                                     @error('pimpinan2')
@@ -248,19 +243,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="manager_AKU_dan_umum">Manager AKU dan Umum</label>
-                                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('manager_AKU_dan_umum', $car->manager_AKU_dan_umum)}}" required>
-                                            @error('manager_AKU_dan_umum')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="manager_tanaman">Manager Tanaman</label>
-                                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman', $car->manager_tanaman)}}" required>
-                                            @error('manager_tanaman')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
+                                       
                                         </div>
                                         <div class="form-group">
     <label for="status">Status</label>
@@ -277,8 +260,9 @@
                                 </div>
                             </div>
                             <div class="card-footer text-right">
-                                <button class="btn btn-dark mr-1" type="reset"><i class="fa-solid fa-arrows-rotate"></i>
-                                    Reset</button>
+                            <button class="btn btn-dark mr-1" type="reset">
+                <i class="fa-solid fa-arrows-rotate"></i> Reset
+            </button>
                                 <button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i>
                                     Edit</button>
                             </div>

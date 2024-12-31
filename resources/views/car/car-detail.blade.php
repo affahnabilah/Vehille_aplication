@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Detail Car')
+@section('title', 'Print Preview')
 @section('content')
 
 <div class="content-wrapper">
@@ -7,14 +7,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('title')</h1>
+                <h1 class="m-20" style="font-family: 'Overlock', sans-serif;">@yield('title')</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/car">Mobil</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
-                    </ol>
+                <div class="col-sm-6">    
                 </div>
             </div>
         </div>
@@ -22,7 +17,7 @@
 
     <div class="text-right mb-3">
     <a href="{{ route('car.print', $car->id) }}" target="_blank" class="btn btn-primary">
-        <i class="fa-solid fa-print"></i> Print Car
+        <i class="fa-solid fa-print"></i> Print Here
     </a>
 </div>
 
@@ -81,13 +76,13 @@
                                     <p><strong>Disetujui</strong></p>
                                     <p><strong>Manager Tanaman</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->manager_tanaman }}</p>
+                                    <p>Arief Agung Gagah P</p>
                                 </div>
                                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                                     <p><strong>Mengetahui</strong></p>
                                     <p><strong>Manager AKU & Umum</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                                    <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                    <p>Nanang Praono R.</p>
                                 </div>
                                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                                     <p><strong>Peminta</strong></p>
@@ -217,13 +212,13 @@
                     <p><strong>Disetujui</strong></p>
                     <p><strong>Manager Tanaman</strong></p>
                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->manager_tanaman }}</p>
+                    <p>Arief Agung Gagah P</p>
                 </div>
                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                     <p><strong>Mengetahui</strong></p>
                     <p><strong>Manager AKU & Umum</strong></p>
                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
-                    <p>{{ $car->manager_AKU_dan_umum }}</p>
+                    <p>Nanang Praono R.</p>
                 </div>
                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                     <p><strong>Peminta</strong></p>

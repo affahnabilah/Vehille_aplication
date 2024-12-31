@@ -209,7 +209,7 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p>Arief Agung Gagah P</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
@@ -224,7 +224,7 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                        <p>Nanang Praono R.</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Peminta</strong></p>
@@ -342,7 +342,7 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p>Arief Agung Gagah P</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
@@ -357,7 +357,7 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                        <p>Nanag Praono R. </p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Peminta</strong></p>
