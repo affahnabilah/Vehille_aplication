@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Digital submission')
+@section('title', 'Tabel Pengajuan')
 @section('content')
 
 <div class="content-wrapper">

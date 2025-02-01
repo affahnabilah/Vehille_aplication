@@ -8,14 +8,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('title')</h1>
+                <h1 class="m-20" style="font-family: 'Overlock', sans-serif;">@yield('title')</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/car">Car</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
-                    </ol>
+                    
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -30,14 +26,14 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="text-right">
-                                <a href="/car" class="btn btn-warning btn-sm">
-                                    <i class="fa-solid fa-arrow-rotate-left"></i> Back
+                                <a href="/car" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
+                                    Back
                                 </a>
                             </div>
-                        </div>
-                        <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
+                            </div>
+                            <form class="needs-validation" novalidate action="/car/{{ $car->id }}" method="POST">
                             @csrf
-                            @method('PUT') <!-- Menambahkan method PUT untuk update -->
+                            @method('PUT')<!-- Menambahkan method PUT untuk update -->
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -50,6 +46,7 @@
                                                 <option value="Teknik" {{ old('bagian', $car->bagian) == 'Teknik' ? 'selected' : '' }}>Teknik</option>
                                                 <option value="QA" {{ old('bagian', $car->bagian) == 'QA' ? 'selected' : '' }}>QA</option>
                                                 <option value="AK" {{ old('bagian', $car->bagian) == 'AK' ? 'selected' : '' }}>AK</option>
+                                                <!-- Tambahkan opsi lain sesuai kebutuhan -->
                                             </select>
                                             @error('bagian')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -69,15 +66,15 @@
 </div>
 <div class="row">
     <div class="col-lg-12 text-center">
-        <h5>Melaksanakan</h5>
+        <h5 style="margin-top: 20px; font-family: 'Arial', sans-serif;">Pemakai Kendaraan</h5>
     </div>
 </div>
 
-                                <div class="row">
+<div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="pimpinan1">Pimpinan1</label>
-                                            <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{ old('pimpinan1', $car->pimpinan1) }}" required>
+                                            <input type="text" name="pimpinan1" class="form-control @error('pimpinan1') is-invalid @enderror" id="pimpinan1" placeholder="Pimpinan1" value="{{old('pimpinan1', $car->pimpinan1)}}" required>
                                             @error('pimpinan1')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -85,81 +82,79 @@
 
                                 <div class="form-group">
                                     <label for="pimpinan2">Pimpinan2</label>
-                                    <label for="pimpinan2">Pimpinan2</label>
                                     <input type="text" name="pimpinan2" class="form-control @error('pimpinan2') is-invalid @enderror" id="pimpinan2" placeholder="Pimpinan2" value="{{ old('pimpinan2', $car->pimpinan2) }}">
                                     @error('pimpinan2')
                                     <span class="invalid-feedback text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
 
-                                        <div class="form-group">
-                                            <label for="pimpinan3">Pimpinan3</label>
-                                            <input type="text" name="pimpinan3" class="form-control @error('pimpinan3') is-invalid @enderror" id="pimpinan3" placeholder="Pimpinan3" value="{{ old('pimpinan3', $car->pimpinan3) }}">
-                                            @error('pimpinan3')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                <div class="form-group">
+                                    <label for="pimpinan3">Pimpinan3</label>
+                                    <input type="text" name="pimpinan3" class="form-control @error('pimpinan3') is-invalid @enderror" id="pimpinan3" placeholder="Pimpinan3" value="{{ old('pimpinan3', $car->pimpinan3) }}">
+                                    @error('pimpinan3')
+                                    <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
-                                        <div class="form-group">
-                                            <label for="pimpinan4">Pimpinan4</label>
-                                            <input type="text" name="pimpinan4" class="form-control @error('pimpinan4') is-invalid @enderror" id="pimpinan4" placeholder="Pimpinan4" value="{{ old('pimpinan4', $car->pimpinan4) }}">
-                                            @error('pimpinan4')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                <div class="form-group">
+                                    <label for="pimpinan4">Pimpinan4</label>
+                                    <input type="text" name="pimpinan4" class="form-control @error('pimpinan4') is-invalid @enderror" id="pimpinan4" placeholder="Pimpinan4" value="{{ old('pimpinan4', $car->pimpinan4) }}">
+                                    @error('pimpinan4')
+                                    <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
                                         <div class="form-group">
                                             <label for="pimpinan5">Pimpinan5</label>
-                                            <input type="text" name="pimpinan5" class="form-control @error('pimpinan5') is-invalid @enderror" id="pimpinan5" placeholder="Pimpinan5" value="{{ old('pimpinan5', $car->pimpinan5) }}">
+                                            <input type="text" name="pimpinan5" class="form-control @error('pimpinan5') is-invalid @enderror" id="pimpinan5" placeholder="Pimpinan5" value="{{old('pimpinan5', $car->pimpinan5)}}" >
                                             @error('pimpinan5')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                    </div>
+                                        </div>
 
-                                    <div class="col-lg-6">
+                                        <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="pelaksana1">Pelaksana1</label>
-                                            <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{ old('pelaksana1', $car->pelaksana1) }}" required>
+                                            <input type="text" name="pelaksana1" class="form-control @error('pelaksana1') is-invalid @enderror" id="pelaksana1" placeholder="Pelaksana1" value="{{old('pelaksana1', $car->pelaksana1)}}" required>
                                             @error('pelaksana1')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="pelaksana2">Pelaksana2</label>
-                                            <input type="text" name="pelaksana2" class="form-control @error('pelaksana2') is-invalid @enderror" id="pelaksana2" placeholder="Pelaksana2" value="{{ old('pelaksana2', $car->pelaksana2) }}">
-                                            @error('pelaksana2')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                <div class="form-group">
+                                    <label for="pelaksana2">Pelaksana2</label>
+                                    <input type="text" name="pelaksana2" class="form-control @error('pelaksana2') is-invalid @enderror" id="pelaksana2" placeholder="Pelaksana2" value="{{ old('pelaksana2', $car->pelaksana2) }}">
+                                    @error('pelaksana2')
+                                    <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
-                                        <div class="form-group">
-                                            <label for="pelaksana3">Pelaksana3</label>
-                                            <input type="text" name="pelaksana3" class="form-control @error('pelaksana3') is-invalid @enderror" id="pelaksana3" placeholder="Pelaksana3" value="{{ old('pelaksana3', $car->pelaksana3) }}">
-                                            @error('pelaksana3')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                <div class="form-group">
+                                    <label for="pelaksana3">Pelaksana3</label>
+                                    <input type="text" name="pelaksana3" class="form-control @error('pelaksana3') is-invalid @enderror" id="pelaksana3" placeholder="Pelaksana3" value="{{ old('pelaksana3', $car->pelaksana3) }}">
+                                    @error('pelaksana3')
+                                    <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
-                                        <div class="form-group">
-                                            <label for="pelaksana4">Pelaksana4</label>
-                                            <input type="text" name="pelaksana4" class="form-control @error('pelaksana4') is-invalid @enderror" id="pelaksana4" placeholder="Pelaksana4" value="{{ old('pelaksana4', $car->pelaksana4) }}">
-                                            @error('pelaksana4')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                <div class="form-group">
+                                    <label for="pelaksana4">Pelaksana4</label>
+                                    <input type="text" name="pelaksana4" class="form-control @error('pelaksana4') is-invalid @enderror" id="pelaksana4" placeholder="Pelaksana4" value="{{ old('pelaksana4', $car->pelaksana4) }}">
+                                    @error('pelaksana4')
+                                    <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
                                         <div class="form-group">
                                             <label for="pelaksana5">Pelaksana5</label>
-                                            <input type="text" name="pelaksana5" class="form-control @error('pelaksana5') is-invalid @enderror" id="pelaksana5" placeholder="Pelaksana5" value="{{ old('pelaksana5', $car->pelaksana5) }}">
+                                            <input type="text" name="pelaksana5" class="form-control @error('pelaksana5') is-invalid @enderror" id="pelaksana5" placeholder="Pelaksana5" value="{{old('pelaksana5', $car->pelaksana5)}}">
                                             @error('pelaksana5')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                    </div>
-                                </div>
-
+                                        </div>
+                                        </div>
                                 <div class="form-group">
                                     <label for="tujuan">Tujuan</label>
                                     <input type="text" name="tujuan" class="form-control @error('tujuan') is-invalid @enderror" id="tujuan" placeholder="Tujuan" value="{{ old('tujuan', $car->tujuan) }}" required>
@@ -224,40 +219,39 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="estimasi_bbm">Estimasi BBM</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
-                                        <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi BBM" value="{{ old('estimasi_bbm', $car->estimasi_bbm) }}" required>
-                                        @error('estimasi_bbm')
-                                        <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="estimasi_tol">Estimasi e-Tol</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
-                                        <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{ old('estimasi_tol', $car->estimasi_tol) }}" required>
-                                        @error('estimasi_tol')
-                                        <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
                                         <div class="form-group">
-                                            <label for="manager_AKU_dan_umum">Manager AKU dan Umum</label>
-                                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('manager_AKU_dan_umum', $car->manager_AKU_dan_umum)}}" required>
-                                            @error('manager_AKU_dan_umum')
+                                        <label for="estimasi_bbm">Estimasi BBM</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
+                                            <input type="text" name="estimasi_bbm" class="form-control @error('estimasi_bbm') is-invalid @enderror" id="estimasi_bbm" placeholder="Estimasi Bbm" value="{{old('estimasi_bbm', $car->estimasi_bbm)}}" required>
+                                            @error('estimasi_bbm')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
+                                        <div class="form-group">
+                                        <div for="estimasi_tol">Estimasi e-Tol</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
+                                            <input type="text" name="estimasi_tol" class="form-control @error('estimasi_tol') is-invalid @enderror" id="estimasi_tol" placeholder="Estimasi Tol" value="{{old('estimasi_tol', $car->estimasi_tol)}}" required>
+                                            @error('estimasi_tol')
+                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                            <label>Manager AKU dan Umum</label>
+                            <input type="text" name="manager_AKU_dan_umum" class="form-control @error('manager_AKU_dan_umum') is-invalid @enderror" id="manager_AKU_dan_umum" placeholder="Manager Aku dan Umum" value="{{old('Nanang Praono R', $car->manager_AKU_dan_umum)}}" required>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Manager Tanaman</label>
+                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('Arif Agung P', $car->manager_tanaman)}}" required>
+                            
+                        </div>
                                        
                                         </div>
                                         <div class="form-group">
@@ -275,8 +269,9 @@
                                 </div>
                             </div>
                             <div class="card-footer text-right">
-                                <button class="btn btn-dark mr-1" type="reset"><i class="fa-solid fa-arrows-rotate"></i>
-                                    Reset</button>
+                            <button class="btn btn-dark mr-1" type="reset">
+                <i class="fa-solid fa-arrows-rotate"></i> Reset
+            </button>
                                 <button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i>
                                     Edit</button>
                             </div>
@@ -287,6 +282,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection

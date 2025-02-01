@@ -4,16 +4,11 @@
 <head>
     <title>Surat Izin Menggunakan Mobil Dinas</title>
     <style>
-    html>
-
-<head>
-    <title>Surat Izin Menggunakan Mobil Dinas</title>
-    <style>
         /* untuk ttd bawah */
         .signature-table {
             width: 100%; /* Mengatur lebar tabel */
             border-collapse: collapse; /* Menghilangkan jarak antar sel */
-            margin-top: 100px; /* Jarak atas, bisa disesuaikan */
+            margin-top: 20px; /* Jarak atas, bisa disesuaikan */
         }
 
         .signature {
@@ -30,19 +25,13 @@
             margin: 5px 0; /* Mengatur margin untuk paragraf dalam tanda tangan */
         }
 
-        /* Menambahkan gaya untuk tabel agar terlihat lebih baik */
-        .signature-table td {
-            padding: 20px; /* Menambahkan padding di dalam sel */
-            vertical-align: top; /* Menyelaraskan konten di bagian atas sel */
-        }
-
         .card {
             margin-top: 20px;
         }
 
         .card-title {
             margin-bottom: 20px;
-            font-size: 1 rem; /* Ukuran font untuk judul */
+            font-size: 1rem; /* Ukuran font untuk judul */
         }
 
         .small-text {
@@ -84,6 +73,10 @@
         .footer {
             margin-top: 30px;
             text-align: right;
+        }
+        @page {
+            size: A4; /* Mengatur ukuran kertas menjadi A4 */
+            margin: 20mm; /* Mengatur margin */
         }
 
         /* Kelas untuk status */
@@ -132,115 +125,107 @@
     </style>
 </head>
 
-
 <body>
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <center>
-                        <h3 class="card-title font-weight-bold">IZIN MENINGGALKAN EMPLASMEN MENGGUNAKAN MOBIL DINAS PG KEDAWOENG</h3>
-                    </center>
-                    <div class="card-body">
-                    <table class="table table-bordered" style="margin-top: 20px;">
-                            <tr>
-                                <td><strong>No. Urut:</strong></td>
-                                <td>{{ $car->id }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Bagian:</strong></td>
-                                <td>{{ $car->bagian }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Nama Peminta:</strong></td>
-                                <td>Raharno Arif Gunadi</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Nama Pengikut:</strong></td>
-                                <td><!-- Anda bisa menambahkan nama pengikut di sini jika ada --></td>
-                            </tr>
-                            <tr>
-                                <td><strong>A. Pimpinan:</strong></td>
-                                <td>
-                                    <p><strong>Pimpinan 1:</strong> {{ $car->pimpinan1 }}</p>
-                                    <p><strong>Pimpinan 2:</strong> {{ $car->pimpinan2 }}</p>
-                                    <p><strong>Pimpinan 3:</strong> {{ $car->pimpinan3 }}</p>
-                                    <p><strong>Pimpinan 4:</strong> {{ $car->pimpinan4 }}</p>
-                                    <p><strong>Pimpinan 5:</strong> {{ $car->pimpinan5 }}</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>B. Pelaksana:</strong></td>
-                                <td>
-                                    <p><strong>Pelaksana 1:</strong> {{ $car->pelaksana1 }}</p>
-                                    <p><strong>Pelaksana 2:</strong> {{ $car->pelaksana2 }}</p>
-                                    <p><strong>Pelaksana 3:</strong> {{ $car->pelaksana3 }}</p>
-                                    <p><strong>Pelaksana 4:</strong> {{ $car->pelaksana4 }}</p>
-                                    <p><strong>Pelaksana 5:</strong> {{ $car->pelaksana5 }}</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tujuan:</strong></td>
-                                <td>{{ $car->tujuan }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Keperluan:</strong></td>
-                                <td>{{ $car->keperluan }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tanggal:</strong></td>
-                                <td>{{ $car->tanggal }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jam Berangkat:</strong></td>
-                                <td>{{ $car->jam_berangkat }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jam Kembali:</strong></td>
-                                <td>{{ $car->jam_kembali }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                
-                    <table class="signature-table">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <center>
+                            <h3 class="card-title font-weight-bold">IZIN MENINGGALKAN EMPLASMEN MENGGUNAKAN MOBIL DINAS PG KEDAWOENG</h3>
+                        </center>
+                        <div class="card-body">
+                            <!-- Tabel 1: Informasi Umum -->
+                            <table class="table table-bordered" style="margin-top: 20px;">
+                                <tr>
+                                    <td><strong>No. Urut:</strong></td>
+                                    <td>{{ $car->id }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bagian:</strong></td>
+                                    <td>{{ $car->bagian }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nama Peminta:</strong></td>
+                                    <td>Raharno Arif Gunadi</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nama Pengikut:</strong></td>
+                                    <td><!-- Anda bisa menambahkan nama pengikut di sini jika ada --></td>
+                                </tr>
+                                    <tr>
+                                        <td style="width: 50%;"><strong>A. Pimpinan:</strong>
+                                            <p><strong>Pimpinan 1:</strong> {{ $car->pimpinan1 }}</p>
+                                            <p><strong>Pimpinan 2:</strong> {{ $car->pimpinan2 }}</p>
+                                            <p><strong>Pimpinan 3:</strong> {{ $car->pimpinan3 }}</p>
+                                            <p><strong>Pimpinan 4:</strong> {{ $car->pimpinan4 }}</p>
+                                            <p><strong>Pimpinan 5:</strong> {{ $car->pimpinan5 }}</p>
+                                        </td>
+                                        <td style="width: 50%;"><strong>B. Pelaksana:</strong>
+                                            <p><strong>Pelaksana 1:</strong> {{ $car->pelaksana1 }}</p>
+                                            <p><strong>Pelaksana 2:</strong> {{ $car->pelaksana2 }}</p>
+                                            <p><strong>Pelaksana 3:</strong> {{ $car->pelaksana3 }}</p>
+                                            <p><strong>Pelaksana 4:</strong> {{ $car->pelaksana4 }}</p>
+                                            <p><strong>Pelaksana 5:</strong> {{ $car->pelaksana5 }}</p>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td><strong>Tujuan:</strong></td>
+                                    <td>{{ $car->tujuan }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Keperluan:</strong></td>
+                                    <td>{{ $car->keperluan }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tanggal:</strong></td>
+                                    <td>{{ $car->tanggal }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jam Berangkat:</strong></td>
+                                    <td>{{ $car->jam_berangkat }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jam Kembali:</strong></td>
+                                    <td>{{ $car->jam_kembali }}</td>
+                                </tr>
+                            </table>
+            
+                            <table class="signature-table">
                                 <tr>
                                     <td class="signature">
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p>Arif Agung Gagah P</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
-                                        <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
-                                            @if ($car->status == 'waiting')
-                                                <span class="status-waiting">Menunggu</span>
-                                            @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
-                                                <span class="status-approval">Disetujui</span>
-                                            @else
-                                                <span class="status-rejected">Ditolak</span>
-                                            @endif
-                                          </div>
                                         <div class="signature-line"></div>
                                         <p>Nanang Praono R.</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Peminta</strong></p>
-                                        <p><strong>-</strong></p>
+                                        <div style="margin-top: 15px;">
+                                            @if ($car->status == 'waiting')
+                                                <span class="status-waiting">Menunggu</span>
+                                            @elseif ($car->status == 'approval')
+                                                <span class="status-approval">Disetujui</span>
+                                            @else
+                                                <span class="status-rejected">Ditolak</span>
+                                            @endif
+                                        </div>
                                         <div class="signature-line"></div>
                                         <p>Raharno Arif Gunadi</p>
                                     </td>
                                 </tr>
                             </table>
-                                </div>
-                                </div>
                         </div> <!-- End of card-body -->
                     </div> <!-- End of card -->
                 </div> <!-- End of col-md-12 -->
             </div> <!-- End of row -->
-        </div> <!-- End of container-fluid -->
+            </div> <!-- End of container-fluid -->
     </div> <!-- End of content -->
 </body>
 
@@ -250,7 +235,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                         <div class="text-left">
                             <p class="card-title font-weight-bold">PT SINERGI GULA NUSANTARA</p>
                             <p class="card-title font-weight-bold">PABRIK GULA KEDAWOENG</p>
@@ -267,50 +252,46 @@
                                     <td style="text-align: left;"><strong>Nama Peminta:</strong></td>
                                     <td style="text-align: left;"> Raharno Arif Gunadi</td>
                                 </tr>
+                                <tr>
+                                    <td><strong>Nama Pengikut:</strong></td>
+                                    <td><!-- Anda bisa menambahkan nama pengikut di sini jika ada --></td>
+                                </tr>
                                     <tr>
-                                        <td style="text-align: left;"><strong>Nama Pengikut:</strong></td>
-                                        <td style="text-align: left;"><!-- Anda bisa menambahkan nama pengikut di sini jika ada --></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: left;"><strong>A. Pimpinan:</strong></td>
-                                        <td style="text-align: left;">
-                                            <p><strong>Pimpinan :</strong> {{ $car->pimpinan1 }}</p>
-                                            <p><strong>Pimpinan :</strong> {{ $car->pimpinan2 }}</p>
-                                            <p><strong>Pimpinan :</strong> {{ $car->pimpinan3 }}</p>
-                                            <p><strong>Pimpinan :</strong> {{ $car->pimpinan4 }}</p>
-                                            <p><strong>Pimpinan :</strong> {{ $car->pimpinan5 }}</p>
+                                        <td style="width: 50%;"><strong>A. Pimpinan:</strong>
+                                            <p><strong>Pimpinan 1:</strong> {{ $car->pimpinan1 }}</p>
+                                            <p><strong>Pimpinan 2:</strong> {{ $car->pimpinan2 }}</p>
+                                            <p><strong>Pimpinan 3:</strong> {{ $car->pimpinan3 }}</p>
+                                            <p><strong>Pimpinan 4:</strong> {{ $car->pimpinan4 }}</p>
+                                            <p><strong>Pimpinan 5:</strong> {{ $car->pimpinan5 }}</p>
+                                        </td>
+                                        <td style="width: 50%;"><strong>B. Pelaksana:</strong>
+                                            <p><strong>Pelaksana 1:</strong> {{ $car->pelaksana1 }}</p>
+                                            <p><strong>Pelaksana 2:</strong> {{ $car->pelaksana2 }}</p>
+                                            <p><strong>Pelaksana 3:</strong> {{ $car->pelaksana3 }}</p>
+                                            <p><strong>Pelaksana 4:</strong> {{ $car->pelaksana4 }}</p>
+                                            <p><strong>Pelaksana 5:</strong> {{ $car->pelaksana5 }}</p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td style="text-align: left;"><strong>B. Pelaksana:</strong></td>
-                                        <td style="text-align: left;">
-                                            <p><strong>Pelaksana :</strong> {{ $car->pelaksana1 }}</p>
-                                            <p><strong>Pelaksana :</strong> {{ $car->pelaksana2 }}</p>
-                                            <p><strong>Pelaksana :</strong> {{ $car->pelaksana3 }}</p>
-                                            <p><strong>Pelaksana :</strong> {{ $car->pelaksana4 }}</p>
-                                            <p><strong>Pimpinana :</strong> {{ $car->pelaksana5 }}</p>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Tujuan:</strong></td>
-                                            <td style="text-align: left;">{{ $car->tujuan }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Keperluan:</strong></td>
-                                            <td style="text-align: left;">{{ $car->keperluan }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Tanggal:</strong></td>
-                                            <td style="text-align: left;">{{ $car->tanggal }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Jam Berangkat:</strong></td>
-                                            <td style="text-align: left;">{{ $car->jam_berangkat }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;"><strong>Jam Kembali:</strong></td>
-                                            <td style="text-align: left;">{{ $car->jam_kembali }}</td>
-                                        </tr>
+                                <tr>
+                                    <td><strong>Tujuan:</strong></td>
+                                    <td>{{ $car->tujuan }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Keperluan:</strong></td>
+                                    <td>{{ $car->keperluan }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tanggal:</strong></td>
+                                    <td>{{ $car->tanggal }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jam Berangkat:</strong></td>
+                                    <td>{{ $car->jam_berangkat }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jam Kembali:</strong></td>
+                                    <td>{{ $car->jam_kembali }}</td>
+                                </tr>
                                     </tbody>
                                 </table>
                                 <table class="table table-bordered" style="max-width: 800px; margin: auto; margin-top: 20px;">
@@ -346,26 +327,25 @@
                                         <p><strong>Disetujui</strong></p>
                                         <p><strong>Manager Tanaman</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_tanaman }}</p>
+                                        <p>Arif Agung Gagah P</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
-                                        <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
+                                        <div class="signature-line"></div>
+                                        <p>Nanang Praono R.</p>
+                                    </td>
+                                    <td class="signature">
+                                        <p><strong>Peminta</strong></p>
+                                        <div style="margin-top: 15px;">
                                             @if ($car->status == 'waiting')
                                                 <span class="status-waiting">Menunggu</span>
-                                            @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
+                                            @elseif ($car->status == 'approval')
                                                 <span class="status-approval">Disetujui</span>
                                             @else
                                                 <span class="status-rejected">Ditolak</span>
                                             @endif
-                                          </div>
-                                        <div class="signature-line"></div>
-                                        <p>Nanag Praono R. </p>
-                                    </td>
-                                    <td class="signature">
-                                        <p><strong>Peminta</strong></p>
-                                        <p><strong>-</strong></p>
+                                        </div>
                                         <div class="signature-line"></div>
                                         <p>Raharno Arif Gunadi</p>
                                     </td>

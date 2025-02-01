@@ -32,6 +32,8 @@ class Car extends Model
        'pengemudi', 
        'estimasi_bbm', 
        'estimasi_tol', 
+       'manager_AKU_dan_umum',
+       'manager_tanaman',
        'status'];
     
     }
