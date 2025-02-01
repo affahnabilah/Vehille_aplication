@@ -46,9 +46,9 @@
                                             <select name="bagian" class="form-control @error('bagian') is-invalid @enderror" id="bagian" required>
                                                 <option value="" disabled>Pilih Bagian</option>
                                                 <option value="Tanaman" {{ old('bagian', $car->bagian) == 'Tanaman' ? 'selected' : '' }}>Tanaman</option>
-                                                <option value="AKU" {{ old('bagian', $car->bagian) == 'AKU' ? 'selected' : '' }}>AKU</option>
+                                                <option value="Pengolahan" {{ old('bagian', $car->bagian) == 'Pengolahan' ? 'selected' : '' }}>Pengolahan</option>
                                                 <option value="Teknik" {{ old('bagian', $car->bagian) == 'Teknik' ? 'selected' : '' }}>Teknik</option>
-                                                <option value="QE" {{ old('bagian', $car->bagian) == 'QE' ? 'selected' : '' }}>QE</option>
+                                                <option value="QA" {{ old('bagian', $car->bagian) == 'QA' ? 'selected' : '' }}>QA</option>
                                                 <option value="AK" {{ old('bagian', $car->bagian) == 'AK' ? 'selected' : '' }}>AK</option>
                                             </select>
                                             @error('bagian')
@@ -60,7 +60,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="nama_peminta">Nama Peminta</label>
-                                            <input type="text" name="nama_peminta" class="form-control @error('nama_peminta') is-invalid @enderror" id="nama_peminta" placeholder="Nama Peminta" value="{{ old('nama_peminta', $car->nama_peminta) }}" required>
+                                            <input type="text" name="nama_peminta" class="form-control @error('nama_peminta') is-invalid @enderror" id="nama_peminta" placeholder="Nama Peminta" value="{{ old('nama_peminta' , $car->nama_peminta) }}" required>
                                             @error('nama_peminta')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -257,12 +257,8 @@
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
-                                            <label for="manager_tanaman">Manager Tanaman</label>
-                                            <input type="text" name="manager_tanaman" class="form-control @error('manager_tanaman') is-invalid @enderror" id="manager_tanaman" placeholder= "Manager tanaman" value="{{old('manager_tanaman', $car->manager_tanaman)}}" required>
-                                            @error('manager_tanaman')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
+
+                                       
                                         </div>
                                         <div class="form-group">
     <label for="status">Status</label>

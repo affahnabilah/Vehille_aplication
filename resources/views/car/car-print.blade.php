@@ -214,11 +214,6 @@
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
-                                        <div class="signature-line"></div>
-                                        <p><strong>Nanang Praono R.</strong></p>
-                                    </td>
-                                    <td class="signature">
-                                        <p><strong>Peminta</strong></p>
                                         <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
                                             @if ($car->status == 'waiting')
                                                 <span class="status-waiting">Menunggu</span>
@@ -229,13 +224,13 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                        <p>Nanang Praono R.</p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Peminta</strong></p>
                                         <p><strong>-</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p>Raharno Arif Gunadi</p>
                                     </td>
                                 </tr>
                             </table>
@@ -268,6 +263,10 @@
                             <div class="card-body">
                                 <table class="table table-bordered" style="max-width: 800px; margin: auto;">
                                     <tbody>
+                                    <tr>
+                                    <td style="text-align: left;"><strong>Nama Peminta:</strong></td>
+                                    <td style="text-align: left;"> Raharno Arif Gunadi</td>
+                                </tr>
                                     <tr>
                                         <td style="text-align: left;"><strong>Nama Pengikut:</strong></td>
                                         <td style="text-align: left;"><!-- Anda bisa menambahkan nama pengikut di sini jika ada --></td>
@@ -352,11 +351,6 @@
                                     <td class="signature">
                                         <p><strong>Mengetahui</strong></p>
                                         <p><strong>Manager AKU & Umum</strong></p>
-                                        <div class="signature-line"></div>
-                                        <p><strong>Nanang Praono R.</strong></p>
-                                    </td>
-                                    <td class="signature">
-                                        <p><strong>Peminta</strong></p>
                                         <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
                                             @if ($car->status == 'waiting')
                                                 <span class="status-waiting">Menunggu</span>
@@ -367,13 +361,13 @@
                                             @endif
                                           </div>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->manager_AKU_dan_umum }}</p>
+                                        <p>Nanag Praono R. </p>
                                     </td>
                                     <td class="signature">
                                         <p><strong>Peminta</strong></p>
                                         <p><strong>-</strong></p>
                                         <div class="signature-line"></div>
-                                        <p>{{ $car->nama_peminta }}</p>
+                                        <p>Raharno Arif Gunadi</p>
                                     </td>
                                 </tr>
                             </table>

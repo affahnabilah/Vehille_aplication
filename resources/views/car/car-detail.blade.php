@@ -40,7 +40,7 @@
 
                                 <p><strong>No. Urut:</strong> {{ $car->id }}</p>
                                 <p><strong>Bagian:</strong> {{ $car->bagian }}</p>
-                                <p><strong>Nama Peminta:</strong> Raharno Arif Gunadi </p>
+                                <p><strong>Nama Peminta:</strong> {{ $car->nama_peminta }} </p>
                             </div>
                         </div>
                         <div class="row">
@@ -91,15 +91,7 @@
                                 </div>
                                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                                     <p><strong>Peminta</strong></p>
-                                    <p style="margin-top: 10px;">
-                                    @if ($car->status == 'waiting')
-                                        <span class="status-waiting">Menunggu</span>
-                                    @elseif ($car->status == 'approval')
-                                        <span class="status-approval">Diterima</span>
-                                    @else
-                                        <span class="status-rejected">Ditolak</span>
-                                    @endif
-                                </p>
+                                    <p><strong>-</strong></p>
                                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
                                     <p>{{ $car->nama_peminta }}</p>
                                 </div>
@@ -144,14 +136,6 @@
     <div class="card-body">
         <table class="table table-bordered" style="max-width: 800px; margin: auto;">
             <tbody>
-                <tr>
-                    <td style="text-align: left;"><strong>No. Urut:</strong></td>
-                    <td style="text-align: left;">{{ $car->id }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;"><strong>Bagian:</strong></td>
-                    <td style="text-align: left;">{{ $car->bagian }}</td>
-                </tr>
                 <tr>
                     <td style="text-align: left;"><strong>Nama Peminta:</strong></td>
                     <td style="text-align: left;"> Raharno Arif Gunadi</td>
@@ -235,7 +219,15 @@
                 </div>
                 <div class="col-md-4 text-center d-flex flex-column align-items-center">
                     <p><strong>Peminta</strong></p>
-                    <p><strong>-</strong></p>
+                    <div style="margin-top: 15px;"> <!-- Menambahkan margin-top untuk jarak -->
+                                            @if ($car->status == 'waiting')
+                                                <span class="status-waiting">Menunggu</span>
+                                            @elseif ($car->status == 'approval') <!-- Perbaikan dari 'waiting' menjadi 'approval' -->
+                                                <span class="status-approval">Diterima</span>
+                                            @else
+                                                <span class="status-rejected">Ditolak</span>
+                                            @endif
+                                          </div>
                     <div style="border-top: 1px solid #000; width: 200px; margin: 20px auto;"></div>
                     <p>{{ $car->nama_peminta }}</p>
                 </div>
